@@ -6,25 +6,25 @@
 ## 주차별 과정
 
 - [1월 2주차 OJT KEYWORD: 개발환경의 이해, SSH & GitHub](https://github.com/MinHyeok-lee1/MK_OJT)
-개발환경 구축 - VS Code, Next.js(React), NestJS
-로컬 서버 접속 환경 구축 - SSH
-Git 사용법 - 소스코드 형상 관리 / README.md
+1) 개발환경 구축 - VS Code, Next.js(React), NestJS
+2) 로컬 서버 접속 환경 구축 - SSH
+3) Git 사용법 - 소스코드 형상 관리 / README.md
 
 - [1월 3주차 OJT KEYWORD: Next.js Dir(ENV)](https://github.com/MinHyeok-lee1/MK_OJT/tree/master/nextjs-env)
-nextjs.org 튜토리얼 클론 코딩 - 로컬 서버의 개인 작업공간 이용
-Git을 통해 소스코드 관리
-학습 내용을 소스코드의 주석 및 README.md 파일로 정리
+1) nextjs.org 튜토리얼 클론 코딩 - 로컬 서버의 개인 작업공간 이용
+2) Git을 통해 소스코드 관리
+3) 학습 내용을 소스코드의 주석 및 README.md 파일로 정리
 
 - [1월 4주차 OJT KEYWORD: Nest.js Dir(ENV)](https://github.com/MinHyeok-lee1/MK_OJT/tree/master/nestjs-env)
-nestjs.com 튜토리얼 클론 코딩 - 로컬 서버의 개인 작업공간 이용
-Git을 통해 소스코드 관리
-학습 내용을 소스코드의 주석 및 README.md 파일로 정리
+1) nestjs.com 튜토리얼 클론 코딩 - 로컬 서버의 개인 작업공간 이용
+2) Git을 통해 소스코드 관리
+3) 학습 내용을 소스코드의 주석 및 README.md 파일로 정리
 
 - [1월 5주차 OJT KEYWORD: MongoDB Dir(ENV)](https://github.com/MinHyeok-lee1/MK_OJT/tree/master/mongodb)
-Mongo 서버 및 접속 환경 구축
-mongoosejs.com 문서 클론 코딩 -로컬 서버의 개인 작업공간 이용
-Git을 통해 소스코드 관리
-학습 내용을 소스코드의 주석 및 README.md 파일로 정리
+1) Mongo 서버 및 접속 환경 구축
+2) mongoosejs.com 문서 클론 코딩 -로컬 서버의 개인 작업공간 이용
+3) Git을 통해 소스코드 관리
+4) 학습 내용을 소스코드의 주석 및 README.md 파일로 정리
 
 ## 구성
 
