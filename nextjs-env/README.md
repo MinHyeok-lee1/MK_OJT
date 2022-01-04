@@ -1,12 +1,6 @@
-## 🚨 This project is now archived
-
-[**This project is now archived and is no longer maintained.**](https://github.com/iaincollins/nextjs-starter/issues/122)
-
-I'm happy so many people found this project useful, but it's now out of date and many of the features of this starter project are now redundant as Next.js has evolved considerably over the last few years and now has native support for features such as CSS and SASS and for API routes without requiring a custom server.
-
-For that reason I'm retiring this project and putting it into archive mode.
-
-Thank you to everyone who contributed to this project over the last 3 years!
+# nextjs.org 튜토리얼 클론 코딩 - 로컬 서버의 개인 작업공간 이용
+# Git을 통해 소스코드 관리
+# 학습 내용을 소스코드의 주석 및 README.md 파일로 정리
 
 #### Where to look for examples
 

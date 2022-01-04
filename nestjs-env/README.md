@@ -1,3 +1,8 @@
+# nestjs.com 튜토리얼 클론 코딩 - 로컬 서버의 개인 작업공간 이용
+# Git을 통해 소스코드 관리
+# 학습 내용을 소스코드의 주석 및 README.md 파일로 정리
+
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
