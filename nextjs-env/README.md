@@ -1,6 +1,6 @@
-# nextjs.org 튜토리얼 클론 코딩 - 로컬 서버의 개인 작업공간 이용
-# Git을 통해 소스코드 관리
-# 학습 내용을 소스코드의 주석 및 README.md 파일로 정리
+##  nextjs.org 튜토리얼 클론 코딩 - 로컬 서버의 개인 작업공간 이용
+##  Git을 통해 소스코드 관리
+##  학습 내용을 소스코드의 주석 및 README.md 파일로 정리
 
 #### Where to look for examples
 
