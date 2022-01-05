@@ -15,27 +15,27 @@
 2) 로컬 서버 접속 환경 구축 - SSH<br>
 2-1) VSC에서 SSH연결 순서: VSC에서 Remote-SSH 설치(확장 프로그램 - srtcut: ctrl + shift + x) -> Show all cmd에서 Remote-SSH: Connect to Host..(확장 프로그램 - srtcut: ctrl + shift + x) -> (ssh 계정@접속주소 or ssh 계정@접속주소 -p 포트번호 입력)<br>
 2-2) CMD에서 SSH연결 순서: 윈도우에서 설정 앱 및 기능(선택적 기능 선택) -> 기능추가(OpenSSH 클라이언트 설치) -> cmd(ssh 계정@접속주소 or ssh 계정@접속주소 -p 포트번호 입력)<br>
-2-3) 서버 ufw(uncomplicated firewall)로 포트관리: 포트 열기 -> sshd(SSH Demon)포트 승인 -> SSH 접속해서 포트확인<br><br>
+2-3) 서버 ufw(uncomplicated firewall)로 포트관리: 서버(ubuntu)에서 sudo로 포트 열기 -> sshd(SSH Demon)포트 승인 -> 해당 포트로 SSH 접속해서 포트확인<br><br>
 
 * 포트 열기(ufw 방화벽 설정)<br>
 Ubuntu 는 앞에 sudo 입력<br>
-설치:  apt-get -y install ufw<br>
-활성화 :  ufw enable<br>
+설치: apt-get -y install ufw<br>
+활성화: ufw enable<br>
 비활성화: ufw disable<br>
 전부막음: ufw default deny<br>
 전부허용: ufw default allow<br>
-서비스이름으로 허용 :  ufw allow http<br>
+서비스이름으로 허용: ufw allow http<br>
 sudo ufw allow ssh<br>
 sudo ufw allow http<br>
 sudo ufw allow ftp<br>
 sudo ufw allow mysql<br>
-막음 :ufw deny http<br>
-포트허용 :ufw allow 80<br>
-막음 :ufw deny 80<br>
-포트/프로토콜로 막음  : ufw deny 80/tcp<br>
-허용 : ufw allow 80/allow<br>
-특정IP(port) 허용 :sudo ufw allow from 111.111.111.111 to any port 21<br>
-특정IP(port) 막음 :sudo ufw deny from 111.111.111.111 to any port 21<br>
+막음: ufw deny http<br>
+포트허용: ufw allow 80<br>
+막음: ufw deny 80<br>
+포트/프로토콜로 막음: ufw deny 80/tcp<br>
+허용: ufw allow 80/allow<br>
+특정IP(port) 허용: sudo ufw allow from 111.111.111.111 to any port 21<br>
+특정IP(port) 막음: sudo ufw deny from 111.111.111.111 to any port 21<br>
 
 * sshd(SSH Demon)포트 승인<br>
 sudo vim /etc/ssh/sshd_config -> vim에서 SSH Port추가(..22번)<br>
