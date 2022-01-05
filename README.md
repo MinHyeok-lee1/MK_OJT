@@ -6,9 +6,9 @@
 ## 주차별 과정
 * [1월 2주차 OJT KEYWORD: 개발환경의 이해, SSH & GitHub](https://github.com/MinHyeok-lee1/MK_OJT)
 1) 개발환경 구축 - VS Code, Next.js, NestJS<br>
-1-1) VSC: VSC 설치 및 확장프로그램(Remote-SSH) 설치<br>
-1-2) Next.js 개발환경: nextjs-dir 폴더에 들어간다, 서버 시작 명령어: npm run dev 명령어 => 포트 변경필요<br>
-1-3) Nest.js 개발환경: nestjs-dir 폴더에 들어간다, 서버 시작 명령어: npm run start:dev 명령어 => 포트 변경필요<br><br>
+* VSC: VSC 설치 및 확장프로그램(Remote-SSH) 설치<br>
+* Next.js 개발환경: nextjs-dir 폴더에 들어간다, 서버 시작 명령어: npm run dev 명령어 => 포트 변경필요<br>
+*  Nest.js 개발환경: nestjs-dir 폴더에 들어간다, 서버 시작 명령어: npm run start:dev 명령어 => 포트 변경필요<br><br>
 
 2) 로컬 서버 접속 환경 구축 - SSH<br>
 * VSC에서 SSH연결 순서:<br>
@@ -27,9 +27,9 @@
   - 해당 포트로 SSH 접속해서 포트확인<br><br>
 
 3) Git & Github 사용법 - 소스코드 형상 관리 / README.md<br>
-3-1) Git & Githu: Git 홈페이지에서 Git 설치 및 VSC 확장프로그램(Github)설치<br>
-3-2) Push, Pull: Push 순서:git ( add . or *-> commit -m 'message'-> push <-> pull )<br>
-3-3) READNE.md: 현재 작성하듯 프로젝트의 설명등의 형상관리를 할 수 있음(추가로 사용설명서 등..)<br><br>
+* Git & Githu: Git 홈페이지에서 Git 설치 및 VSC 확장프로그램(Github)설치<br>
+* Push, Pull: Push 순서:git ( add . or *-> commit -m 'message'-> push <-> pull )<br>
+* READNE.md: 현재 작성하듯 프로젝트의 설명등의 형상관리를 할 수 있음(추가로 사용설명서 등..)<br><br>
 
 * [1월 3주차 OJT KEYWORD: Next.js Dir(dir)](https://github.com/MinHyeok-lee1/MK_OJT/tree/master/nextjs-dir)
 1) nextjs.org 튜토리얼 클론 코딩 - 로컬 서버의 개인 작업공간 이용<br>
