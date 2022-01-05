@@ -7,13 +7,22 @@
 * [1월 2주차 OJT KEYWORD: 개발환경의 이해, SSH & GitHub](https://github.com/MinHyeok-lee1/MK_OJT)
 1) 개발환경 구축 - VS Code, Next.js, NestJS<br>
 1-1) VSC: VSC 설치 및 확장프로그램(Remote-SSH) 설치<br>
-1-2) Next.js 개발환경: nextjs-dir 폴더에 들어간다, 서버 시작 명령어: npm run dev 명령어 => npm run 9000 <br>
-1-3) Nest.js 개발환경: nestjs-dir 폴더에 들어간다, 서버 시작 명령어: npm run start:dev 명령어 => npm run start:9001 (지정 포트번호)<br><br>
+1-2) Next.js 개발환경: nextjs-dir 폴더에 들어간다, 서버 시작 명령어: npm run dev 명령어 => 포트 변경필요<br>
+1-3) Nest.js 개발환경: nestjs-dir 폴더에 들어간다, 서버 시작 명령어: npm run start:dev 명령어 => 포트 변경필요<br><br>
 
 2) 로컬 서버 접속 환경 구축 - SSH<br>
-2-1) VSC에서 SSH연결 순서: VSC에서 Remote-SSH 설치(확장 프로그램 - srtcut: ctrl + shift + x) -> Show all cmd에서 Remote-SSH: Connect to Host..(확장 프로그램 - srtcut: ctrl + shift + x) -> (ssh 계정@접속주소 or ssh 계정@접속주소 -p 포트번호 입력)<br>
-2-2) CMD에서 SSH연결 순서: 윈도우에서 설정 앱 및 기능(선택적 기능 선택) -> 기능추가(OpenSSH 클라이언트 설치) -> cmd(ssh 계정@접속주소 or ssh 계정@접속주소 -p 포트번호 입력)<br>
-2-3) 서버 ufw(uncomplicated firewall)로 포트관리: 서버(ubuntu)에서 sudo로 포트 열기 -> sshd(SSH Demon)포트 승인 -> 해당 포트로 SSH 접속해서 포트확인<br><br>
+2-1) VSC에서 SSH연결 순서:<br>
+VSC에서 Remote-SSH 설치(확장 프로그램 - srtcut: ctrl + shift + x)<br>
+Show all cmd에서 Remote-SSH: Connect to Host..(확장 프로그램 - srtcut: ctrl + shift + x)<br>
+(ssh 계정@접속주소 or ssh 계정@접속주소 -p 포트번호 입력)<br>
+2-2) CMD에서 SSH연결 순서<br>
+윈도우에서 설정 앱 및 기능(선택적 기능 선택)<br>
+기능추가(OpenSSH 클라이언트 설치)<br>
+cmd(ssh 계정@접속주소 or ssh 계정@접속주소 -p 포트번호 입력)<br>
+2-3) 서버 ufw(uncomplicated firewall)로 포트관리<br>
+서버(ubuntu)에서 sudo로 포트 열기<br>
+sshd(SSH Demon)포트 승인<br>
+해당 포트로 SSH 접속해서 포트확인<br><br>
 
 3) Git & Github 사용법 - 소스코드 형상 관리 / README.md<br>
 3-1) Git & Githu: Git 홈페이지에서 Git 설치 및 VSC 확장프로그램(Github)설치<br>
