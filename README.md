@@ -78,13 +78,13 @@ exit<br>
 <br>
 
 ## 참고
-- VSC ShortCut Image: https://code.visualstudio.com/docs/getstarted/tips-and-tricks<br>
+
 # VSC Shortcut Windows<br>
+- VSC ShortCut Image: https://code.visualstudio.com/docs/getstarted/tips-and-tricks<br>
 <img src="https://code.visualstudio.com/assets/docs/getstarted/tips-and-tricks/KeyboardReferenceSheet.png">
 
-- Github README.md 작성방법: https://github.com/lsh424/MARKDOWN/blob/master/README.md<br>
-
 ## MARKDOWN(.md)
+- Github README.md 작성방법: https://github.com/lsh424/MARKDOWN/blob/master/README.md<br>
 MARKDOWN 정리, 실습 for README.md
 
 # 1. 제목(글머리) 작성
