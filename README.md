@@ -12,12 +12,12 @@
  +추가 VSC Shortcut Windows<br>
 <img src="https://code.visualstudio.com/assets/docs/getstarted/tips-and-tricks/KeyboardReferenceSheet.png"  width="700" height="370">
 <br>
-1-2) Next.js
-npm run dev
+1-2) Next.js <br>
+npm run dev <br>
 npm run 9000
 
 <br>
-1-3) Nest.js
+1-3) Nest.js <br>
 npm run start:dev<br>
 npm run start:9001
 
