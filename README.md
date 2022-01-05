@@ -13,9 +13,35 @@
 1-3) Nest.js 개발환경: nestjs-env 폴더에 들어간다, 서버 시작 명령어: npm run start:dev 명령어 => npm run start:9001 (지정 포트번호)<br><br>
 
 2) 로컬 서버 접속 환경 구축 - SSH<br>
-2-1) VSC에서 SSH연결 순서<br>
-2-2) CMD에서 SSH연결 순서<br>
-2-3) 서버 ufw로 포트관리<br><br>
+2-1) VSC에서 SSH연결 순서: VSC에서 Remote-SSH 설치(확장 프로그램 - srtcut: ctrl + shift + x) -> Show all cmd에서 Remote-SSH: Connect to Host..(확장 프로그램 - srtcut: ctrl + shift + x) -> (ssh 계정@접속주소 or ssh 계정@접속주소 -p 포트번호 입력)<br>
+2-2) CMD에서 SSH연결 순서: 윈도우에서 설정 앱 및 기능(선택적 기능 선택) -> 기능추가(OpenSSH 클라이언트 설치) -> cmd(ssh 계정@접속주소 or ssh 계정@접속주소 -p 포트번호 입력)<br>
+2-3) 서버 ufw(uncomplicated firewall)로 포트관리: 포트 열기 -> sshd(SSH Demon)포트 승인 -> SSH 접속해서 포트확인<br><br>
+
+* 포트 열기(ufw 방화벽 설정)<br>
+Ubuntu 는 앞에 sudo 입력<br>
+설치:  apt-get -y install ufw<br>
+활성화 :  ufw enable<br>
+비활성화: ufw disable<br>
+전부막음: ufw default deny<br>
+전부허용: ufw default allow<br>
+서비스이름으로 허용 :  ufw allow http<br>
+sudo ufw allow ssh<br>
+sudo ufw allow http<br>
+sudo ufw allow ftp<br>
+sudo ufw allow mysql<br>
+막음 :ufw deny http<br>
+포트허용 :ufw allow 80<br>
+막음 :ufw deny 80<br>
+포트/프로토콜로 막음  : ufw deny 80/tcp<br>
+허용 : ufw allow 80/allow<br>
+특정IP(port) 허용 :sudo ufw allow from 111.111.111.111 to any port 21<br>
+특정IP(port) 막음 :sudo ufw deny from 111.111.111.111 to any port 21<br>
+
+* sshd(SSH Demon)포트 승인<br>
+sudo vim /etc/ssh/sshd_config -> vim에서 SSH Port추가(..22번)<br>
+sudo service sshd restart<br>
+exit<br>
+
 
 3) Git & Github 사용법 - 소스코드 형상 관리 / README.md<br>
 3-1) Git & Githu: Git 홈페이지에서 Git 설치 및 VSC 확장프로그램(Github)설치<br>
@@ -41,8 +67,8 @@
 ## 이슈
 - GitHub 사용법 & 각 학습폴더 생성 & VS Code, Next.js(React), NestJS 전체적으로 프로젝트를 진행하며 발생한 이슈를 기록
 - 2주차 
- 1) 1월 2주차 OJT: SSH 로컬 작업환경 개발환경 구축중 이슈발생: SSH연결 할 때 .ssh\config 에서 User를 dev로 하지않아서 Permission이 denied되는 상황이 발생하였다.<br>
- 1-1) 해결방안: .ssh\config에서 User를 dev로 설정해주어서 해결
+ 1) 1월 2주차 OJT: SSH 로컬 작업환경 개발환경 구축중 이슈발생: SSH연결 할 때 .ssh\config 에서 User(계정)를 dev로 하지않아서 Permission이 denied되는 상황이 발생하였다.<br>
+ 1-1) 해결방안: .ssh\config에서 User를 dev로 설정해주어서 해결 User는 그냥 단순한 별명이 아닌 계정이름이다. Host는 상관없지만 User는 맞춰줘야함.
 
 - 3주차: 1월 3주차 OJT: Next.js 학습,
 
