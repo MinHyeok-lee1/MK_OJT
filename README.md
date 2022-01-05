@@ -12,25 +12,25 @@
 1-2) Next.js<br>
 1-3) Nest.js<br>
 2) 로컬 서버 접속 환경 구축 - SSH<br>
-3) Git 사용법 - 소스코드 형상 관리 / README.md<br>
+3) Git 사용법 - 소스코드 형상 관리 / README.md<br><br>
 
 - [1월 3주차 OJT KEYWORD: Next.js Dir(ENV)](https://github.com/MinHyeok-lee1/MK_OJT/tree/master/nextjs-env)
 1) nextjs.org 튜토리얼 클론 코딩 - 로컬 서버의 개인 작업공간 이용<br>
 2) Git을 통해 소스코드 관리<br>
-3) 학습 내용을 소스코드의 주석 및 README.md 파일로 정리<br>
+3) 학습 내용을 소스코드의 주석 및 README.md 파일로 정리<br><br>
 
 
 - [1월 4주차 OJT KEYWORD: Nest.js Dir(ENV)](https://github.com/MinHyeok-lee1/MK_OJT/tree/master/nestjs-env)
 1) nestjs.com 튜토리얼 클론 코딩 - 로컬 서버의 개인 작업공간 이용<br>
 2) Git을 통해 소스코드 관리<br>
-3) 학습 내용을 소스코드의 주석 및 README.md 파일로 정리<br>
+3) 학습 내용을 소스코드의 주석 및 README.md 파일로 정리<br><br>
 
 
 - [1월 5주차 OJT KEYWORD: MongoDB Dir(ENV)](https://github.com/MinHyeok-lee1/MK_OJT/tree/master/mongodb)
 1) Mongo 서버 및 접속 환경 구축<br>
 2) mongoosejs.com 문서 클론 코딩 -로컬 서버의 개인 작업공간 이용<br>
 3) Git을 통해 소스코드 관리<br>
-4) 학습 내용을 소스코드의 주석 및 README.md 파일로 정리<br>
+4) 학습 내용을 소스코드의 주석 및 README.md 파일로 정리<br><br>
 
 
 ## 이슈
