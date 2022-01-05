@@ -11,8 +11,7 @@
 1-1) VSC: VSC 설치 및 확장프로그램(Remote-SSH) 설치<br>
 1-2) Next.js 개발환경: nextjs-env 폴더에 들어간다, 서버 시작 명령어: npm run dev 명령어 => npm run 9000 <br>
 1-3) Nest.js 개발환경: nestjs-env 폴더에 들어간다, 서버 시작 명령어: npm run start:dev 명령어 => npm run start:9001 (지정 포트번호)<br><br>
- +추가 VSC Shortcut Windows<br>
-<img src="https://code.visualstudio.com/assets/docs/getstarted/tips-and-tricks/KeyboardReferenceSheet.png">
+
 2) 로컬 서버 접속 환경 구축 - SSH<br>
 2-1) VSC에서 SSH연결 순서<br>
 2-2) CMD에서 SSH연결 순서<br>
@@ -54,9 +53,12 @@
 
 ## 참고
 - VSC ShortCut Image: https://code.visualstudio.com/docs/getstarted/tips-and-tricks<br>
+# VSC Shortcut Windows<br>
+<img src="https://code.visualstudio.com/assets/docs/getstarted/tips-and-tricks/KeyboardReferenceSheet.png">
+
 - Github README.md 작성방법: https://github.com/lsh424/MARKDOWN/blob/master/README.md<br>
 
-## MARKDOWN
+## MARKDOWN(.md)
 MARKDOWN 정리, 실습 for README.md
 
 # 1. 제목(글머리) 작성
