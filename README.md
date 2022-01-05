@@ -17,7 +17,7 @@
 
 3) Git & Github 사용법 - 소스코드 형상 관리 / README.md<br>
 3-1) Git & Githu: Git 홈페이지에서 Git 설치 및 VSC 확장프로그램(Github)설치<br>
-3-2) Push, Pull: Push 순서:git ( add -> commit -> push, pull )<br>
+3-2) Push, Pull: Push 순서:git ( add . or *-> commit -m 'message'-> push <-> pull )<br>
 3-3) READNE.md: 현재 작성하듯 프로젝트의 설명등의 형상관리를 할 수 있음(추가로 사용설명서 등..)<br><br>
 
 * [1월 3주차 OJT KEYWORD: Next.js Dir(dir)](https://github.com/MinHyeok-lee1/MK_OJT/tree/master/nextjs-dir)
