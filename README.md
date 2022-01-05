@@ -15,10 +15,12 @@
    * VSC에서 Remote-SSH 설치(확장 프로그램 - srtcut: ctrl + shift + x)<br>
    * Show all cmd에서 Remote-SSH: Connect to Host..(확장 프로그램 - srtcut: ctrl + shift + x)<br>
    * (ssh 계정@접속주소 or ssh 계정@접속주소 -p 포트번호 입력)<br>
+<br>
 2-2) CMD에서 SSH연결 순서<br>
    * 윈도우에서 설정 앱 및 기능(선택적 기능 선택)<br>
    * 기능추가(OpenSSH 클라이언트 설치)<br>
    * cmd(ssh 계정@접속주소 or ssh 계정@접속주소 -p 포트번호 입력)<br>
+<br>
 2-3) 서버 ufw(uncomplicated firewall)로 포트관리<br>
    * 서버(ubuntu)에서 sudo로 포트 열기<br>
    * sshd(SSH Demon)포트 승인<br>
