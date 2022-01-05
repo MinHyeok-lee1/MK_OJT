@@ -15,7 +15,7 @@
 2) 로컬 서버 접속 환경 구축 - SSH<br>
 2-1) VSC에서 SSH연결 순서<br>
 2-2) CMD에서 SSH연결 순서<br>
-2-3) 서버 ufw로 포트관리<br>
+2-3) 서버 ufw로 포트관리
 <br><br>
 3) Git & Github 사용법 - 소스코드 형상 관리 / README.md<br>
 3-1) Git & Github <br>
@@ -53,8 +53,8 @@
 
 - 5주차: 1월 5주차 OJT: MongoDB 학습, 
 
-
-# 참고
+<br>
+## 참고
 - Github README.md 작성방법: https://github.com/lsh424/MARKDOWN/blob/master/README.md
 <br>
 ## MARKDOWN
