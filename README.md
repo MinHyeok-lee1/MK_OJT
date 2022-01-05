@@ -11,7 +11,7 @@
 1-1) VSC: VSC 설치 및 확장프로그램(Remote-SSH) 설치수행<br>
  +추가 VSC Shortcut Windows<br>
 <img src="https://code.visualstudio.com/assets/docs/getstarted/tips-and-tricks/KeyboardReferenceSheet.png"  width="700" height="370">
-<br>
+
 1-2) Next.js <br>
 npm run dev <br>
 npm run 9000
@@ -23,7 +23,6 @@ npm run start:9001
 
 <br><br>
 2) 로컬 서버 접속 환경 구축 - SSH
-
 <br>
 2-1) VSC에서 SSH연결 순서
 
