@@ -61,16 +61,16 @@
     + 특정IP(port) 허용: sudo ufw allow from 111.111.111.111 to any port 21<br>
     + 특정IP(port) 막음: sudo ufw deny from 111.111.111.111 to any port 21<br>
   - sshd(SSH Demon)접근(cmd -> ssh 연결) 및 vim에서 sshd 포트등록 및 재시작에 관한 이슈<br>
-    + sudo vim /etc/ssh/sshd_config -> vim에서 SSH Port추가(..22번)<br>
+    + <b>sudo vim /etc/ssh/sshd_config</b> -> vim에서 SSH Port추가(..22번)<br>
     + sudo service sshd restart<br>
     + exit<br>
 
 * 3주차: 1월 3주차 OJT: Next.js 진행중 발생issue
-  - Next.js 개발환경: nextjs-dir 폴더에 들어간다, 서버 시작 명령어(Default): npm run dev 명령어<br>
-      + "dev":"next dev"를 "9000": "next dev -p 9000"로 수정하면 npm (Package.json)<br>
+  - Next.js 개발환경: nextjs-dir 폴더에 들어간다.<br>
+      + 서버 시작 명령어(Default): npm run dev 명령어를 "dev":"next dev" => <b>"9000": "next dev -p 9000"</b>로 수정(Package.json에서)<br>
 * 4주차: 1월 4주차 OJT: Nest.js 진행중 발생issue
-  - Nest.js 개발환경: nestjs-dir 폴더에 들어간다, 서버 시작 명령어(Default): npm run start:dev 명령어<br>
-      + 3000을 9001로 수정(main.ts에서)<br>
+  - Nest.js 개발환경: nestjs-dir 폴더에 들어간다<br>
+      + 서버 시작 명령어(Default): npm run start:dev 명령어는 그대로 포트만 3000을 9001로 수정(main.ts에서)<br>
 * 5주차: 1월 5주차 OJT: MongoDB 학습,<br>
 
 # 참고
