@@ -12,7 +12,7 @@
 1-2) Next.js 개발환경: nextjs-env 폴더에 들어간다, 서버 시작 명령어: npm run dev 명령어 => npm run 9000 <br>
 1-3) Nest.js 개발환경: nestjs-env 폴더에 들어간다, 서버 시작 명령어: npm run start:dev 명령어 => npm run start:9001 (지정 포트번호)<br><br>
  +추가 VSC Shortcut Windows<br>
-<img src="https://code.visualstudio.com/assets/docs/getstarted/tips-and-tricks/KeyboardReferenceSheet.png"  width="700" height="370">
+   <img src="https://code.visualstudio.com/assets/docs/getstarted/tips-and-tricks/KeyboardReferenceSheet.png"  width="700" height="370">
 
 
 2) 로컬 서버 접속 환경 구축 - SSH<br>
