@@ -54,8 +54,8 @@
 <br>
 
 ## 참고
+- VSC ShortCut Image: https://code.visualstudio.com/docs/getstarted/tips-and-tricks<br>
 - Github README.md 작성방법: https://github.com/lsh424/MARKDOWN/blob/master/README.md<br>
-- VSC ShortCut: https://code.visualstudio.com/docs/getstarted/tips-and-tricks<br>
 
 ## MARKDOWN
 MARKDOWN 정리, 실습 for README.md
