@@ -8,38 +8,75 @@
 ## 주차별 과정
 - [1월 2주차 OJT KEYWORD: 개발환경의 이해, SSH & GitHub](https://github.com/MinHyeok-lee1/MK_OJT)
 1) 개발환경 구축 - VS Code, Next.js, NestJS<br>
-1-1) VSC<br>
-1-2) Next.js<br>
+1-1) VSC
+
+<br>
+1-2) Next.js
+
+<br>
 1-3) Nest.js
+
 <br><br>
-2) 로컬 서버 접속 환경 구축 - SSH<br>
-2-1) VSC에서 SSH연결 순서<br>
-2-2) CMD에서 SSH연결 순서<br>
+2) 로컬 서버 접속 환경 구축 - SSH
+
+<br>
+2-1) VSC에서 SSH연결 순서
+
+<br>
+2-2) CMD에서 SSH연결 순서
+
+<br>
 2-3) 서버 ufw로 포트관리
+
 <br><br>
-3) Git & Github 사용법 - 소스코드 형상 관리 / README.md<br>
-3-1) Git & Github <br>
-3-2) push, pull<br>
-3-3) READNE.md<br>
+3) Git & Github 사용법 - 소스코드 형상 관리 / README.md
+
+<br>
+3-1) Git & Github 
+
+<br>
+3-2) push, pull
+
+<br>
+3-3) READNE.md
+
+<br><br>
 
 - [1월 3주차 OJT KEYWORD: Next.js Dir(ENV)](https://github.com/MinHyeok-lee1/MK_OJT/tree/master/nextjs-env)
-1) nextjs.org 튜토리얼 클론 코딩 - 로컬 서버의 개인 작업공간 이용<br>
-2) Git을 통해 소스코드 관리<br>
-3) 학습 내용을 소스코드의 주석 및 README.md 파일로 정리<br><br>
+1) nextjs.org 튜토리얼 클론 코딩 - 로컬 서버의 개인 작업공간 이용
 
+<br>
+2) Git을 통해 소스코드 관리
+
+<br>
+3) 학습 내용을 소스코드의 주석 및 README.md 파일로 정리
+
+<br><br>
 
 - [1월 4주차 OJT KEYWORD: Nest.js Dir(ENV)](https://github.com/MinHyeok-lee1/MK_OJT/tree/master/nestjs-env)
-1) nestjs.com 튜토리얼 클론 코딩 - 로컬 서버의 개인 작업공간 이용<br>
-2) Git을 통해 소스코드 관리<br>
-3) 학습 내용을 소스코드의 주석 및 README.md 파일로 정리<br><br>
+1) nestjs.com 튜토리얼 클론 코딩 - 로컬 서버의 개인 작업공간 이용
 
+<br>
+2) Git을 통해 소스코드 관리
+
+<br>
+3) 학습 내용을 소스코드의 주석 및 README.md 파일로 정리
+
+<br><br>
 
 - [1월 5주차 OJT KEYWORD: MongoDB Dir(ENV)](https://github.com/MinHyeok-lee1/MK_OJT/tree/master/mongodb)
-1) Mongo 서버 및 접속 환경 구축<br>
-2) mongoosejs.com 문서 클론 코딩 -로컬 서버의 개인 작업공간 이용<br>
-3) Git을 통해 소스코드 관리<br>
-4) 학습 내용을 소스코드의 주석 및 README.md 파일로 정리<br><br>
+1) Mongo 서버 및 접속 환경 구축
 
+<br>
+2) mongoosejs.com 문서 클론 코딩 -로컬 서버의 개인 작업공간 이용
+
+<br>
+3) Git을 통해 소스코드 관리
+
+<br>
+4) 학습 내용을 소스코드의 주석 및 README.md 파일로 정리
+
+<br><br>
 
 ## 이슈
 - GitHub 사용법 & 각 학습폴더 생성 & VS Code, Next.js(React), NestJS 전체적으로 프로젝트를 진행하며 발생한 이슈를 기록
@@ -52,11 +89,12 @@
 - 4주차: 1월 4주차 OJT: Nest.js 학습, 
 
 - 5주차: 1월 5주차 OJT: MongoDB 학습, 
-
 <br>
+
 ## 참고
 - Github README.md 작성방법: https://github.com/lsh424/MARKDOWN/blob/master/README.md
 <br>
+
 ## MARKDOWN
 MARKDOWN 정리, 실습 for README.md
 
