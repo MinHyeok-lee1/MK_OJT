@@ -9,7 +9,7 @@
 - [1월 2주차 OJT KEYWORD: 개발환경의 이해, SSH & GitHub](https://github.com/MinHyeok-lee1/MK_OJT)
 1) 개발환경 구축 - VS Code, Next.js, NestJS<br>
 1-1) VSC
-
+<img src="https://code.visualstudio.com/assets/docs/getstarted/tips-and-tricks/KeyboardReferenceSheet.png"  width="700" height="370">
 <br>
 1-2) Next.js
 
