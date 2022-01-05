@@ -22,15 +22,15 @@ Ubuntu 는 앞에 sudo 입력<br>
 비활성화: ufw disable<br>
 전부막음: ufw default deny<br>
 전부허용: ufw default allow<br>
-서비스이름으로 허용: ufw allow http<br>
+http로 허용: ufw allow http<br>
 sudo ufw allow ssh<br>
 sudo ufw allow http<br>
 sudo ufw allow ftp<br>
 sudo ufw allow mysql<br>
 막음: ufw deny http<br>
-포트허용: ufw allow 80<br> <=<=<=<=<=
-막음: ufw deny 80<br>
-포트/프로토콜로 막음: ufw deny 80/tcp<br>
+포트 80 허용: ufw allow 80 <=<=<=<=<=<br>
+포트 80 막음: ufw deny 80<br>
+포트 80 포트/ tcp 프로토콜로 막음: ufw deny 80/tcp<br>
 허용: ufw allow 80/allow<br>
 특정IP(port) 허용: sudo ufw allow from 111.111.111.111 to any port 21<br>
 특정IP(port) 막음: sudo ufw deny from 111.111.111.111 to any port 21<br>
@@ -95,8 +95,8 @@ MARKDOWN 정리, 실습 for README.md
 
 ## 2. 번호 없는 리스트 작성
 * 리스트1
-  - 리스트2
-    + 리스트3
+- 리스트2
++ 리스트3
     
 ## 3. 번호 있는 리스트 작성
 1. 리스트1
