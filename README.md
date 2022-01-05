@@ -10,12 +10,14 @@
 1) 개발환경 구축 - VS Code, Next.js, NestJS<br>
 1-1) VSC<br>
 1-2) Next.js<br>
-1-3) Nest.js<br>
+1-3) Nest.js
+<br><br>
 2) 로컬 서버 접속 환경 구축 - SSH<br>
 2-1) VSC에서 SSH연결 순서<br>
 2-2) CMD에서 SSH연결 순서<br>
 2-3) 서버 ufw로 포트관리<br>
-3) Git & Github 사용법 - 소스코드 형상 관리 / README.md<br><br>
+<br><br>
+3) Git & Github 사용법 - 소스코드 형상 관리 / README.md<br>
 3-1) Git & Github <br>
 3-2) push, pull<br>
 3-3) READNE.md<br>
