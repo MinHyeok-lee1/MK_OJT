@@ -10,8 +10,10 @@
 ## 주차별 과정
 
 - [1월 2주차 OJT KEYWORD: 개발환경의 이해, SSH & GitHub](https://github.com/MinHyeok-lee1/MK_OJT)
-1) 개발환경 구축 - VS Code, Next.js(React), NestJS
-
+1) 개발환경 구축 - VS Code, Next.js, NestJS
+1-1) VSC
+1-2) Next.js
+1-3) Nest.js
 2) 로컬 서버 접속 환경 구축 - SSH
 
 3) Git 사용법 - 소스코드 형상 관리 / README.md
