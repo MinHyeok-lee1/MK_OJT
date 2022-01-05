@@ -15,20 +15,13 @@
 1-2) Next.js 개발환경<br>
 nextjs-env 폴더에 들어간다.<br>
 서버 시작 명령어: npm run dev 명령어<br>
-npm run 9000 
-
-<br>
+npm run 9000 <br>
 1-3) Nest.js <br>
 nestjs-env 폴더에 들어간다.<br>
 서버 시작 명령어: npm run start:dev 명령어<br>
-npm run start:9001 (지정 포트번호)
-
-<br><br>
-2) 로컬 서버 접속 환경 구축 - SSH
-<br>
-2-1) VSC에서 SSH연결 순서
-
-<br>
+npm run start:9001 (지정 포트번호)<br><br>
+2) 로컬 서버 접속 환경 구축 - SSH<br>
+2-1) VSC에서 SSH연결 순서<br>
 2-2) CMD에서 SSH연결 순서
 
 <br>
