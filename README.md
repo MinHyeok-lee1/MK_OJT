@@ -54,7 +54,7 @@
     + sudo ufw allow ftp<br>
     + sudo ufw allow mysql<br>
     + 막음: ufw deny http<br>
-    + <b>포트 80 허용: ufw allow 80</b> <=<=<=<=<= <br>
+    + <b>포트 80 허용: ufw allow 80</b><br>
     + 포트 80 막음: ufw deny 80<br>
     + 포트 80 포트/ tcp 프로토콜로 막음: ufw deny 80/tcp<br>
     + 허용: ufw allow 80/allow<br>
