@@ -1,7 +1,7 @@
 # MK_OJT
 (주)MK 신입인턴 OJT PROJECT이다.<br>
 1) 신입인턴에게 총 4주동안 개발환경의 이해부터 Next.js, Nest.js, MongoDB까지 사용하여 업무능력을 향상시킨다.<br>
-2) 본 프로젝트를 GitHub를 통해 형상관리를 하고 README.md 파일로 정리하는 능력을 기른다.<br>
+2) 본 프로젝트를 GitHub를 통해 형상관리를 하고 README.md 파일로 정리하는 능력을 기른다.<br><br>
 
 ## 주차별 과정
 - [1월 2주차 OJT KEYWORD: 개발환경의 이해, SSH & GitHub](https://github.com/MinHyeok-lee1/MK_OJT)
@@ -15,7 +15,7 @@
 2-2) CMD에서 SSH연결 순서: 윈도우에서 설정 앱 및 기능(선택적 기능 선택) -> 기능추가(OpenSSH 클라이언트 설치) -> cmd(ssh 계정@접속주소 or ssh 계정@접속주소 -p 포트번호 입력)<br>
 2-3) 서버 ufw(uncomplicated firewall)로 포트관리: 서버(ubuntu)에서 sudo로 포트 열기 -> sshd(SSH Demon)포트 승인 -> 해당 포트로 SSH 접속해서 포트확인<br><br>
 
-* 포트 열기(ufw 방화벽 설정)<br>
+* 포트 허용(ufw 방화벽 설정)<br>
 Ubuntu 는 앞에 sudo 입력<br>
 설치: apt-get -y install ufw<br>
 활성화: ufw enable<br>
@@ -28,7 +28,7 @@ sudo ufw allow http<br>
 sudo ufw allow ftp<br>
 sudo ufw allow mysql<br>
 막음: ufw deny http<br>
-포트허용: ufw allow 80<br>
+포트허용: ufw allow 80<br> <=<=<=<=<=
 막음: ufw deny 80<br>
 포트/프로토콜로 막음: ufw deny 80/tcp<br>
 허용: ufw allow 80/allow<br>
