@@ -8,14 +8,18 @@
 ## 주차별 과정
 - [1월 2주차 OJT KEYWORD: 개발환경의 이해, SSH & GitHub](https://github.com/MinHyeok-lee1/MK_OJT)
 1) 개발환경 구축 - VS Code, Next.js, NestJS<br>
-1-1) VSC: VSC 설치 및 확장프로그램(Remote-SSH) 설치수행
- +추가 VSC Shortcut Windows
+1-1) VSC: VSC 설치 및 확장프로그램(Remote-SSH) 설치수행<br>
+ +추가 VSC Shortcut Windows<br>
 <img src="https://code.visualstudio.com/assets/docs/getstarted/tips-and-tricks/KeyboardReferenceSheet.png"  width="700" height="370">
 <br>
 1-2) Next.js
+npm run dev
+npm run 9000
 
 <br>
 1-3) Nest.js
+npm run start:dev<br>
+npm run start:9001
 
 <br><br>
 2) 로컬 서버 접속 환경 구축 - SSH
