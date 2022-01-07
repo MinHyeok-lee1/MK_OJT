@@ -30,7 +30,7 @@
         + 최적화된 이미지(Resizing & Optimizing images 제공)
         + <pre>import Image from 'next/image'
           const YourComponent = () => ( 
-            \<Image src="/images/profile.jpg" // Route of the image file
+            \\<Image src="/images/profile.jpg" // Route of the image file
                 height={144} // Desired size with correct aspect ratio
                 width={144} // Desired size with correct aspect ratio
                 alt="Your Name"
