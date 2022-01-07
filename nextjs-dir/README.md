@@ -25,9 +25,9 @@
 
     - Assets, Metadata, and CSS
         + 정적 파일(Assets)을 사용하는 방법은 아래와 같다.
-        + 최적화되지 않은 이미지
+        최적화되지 않은 이미지
         + \<img src="/images/profile.jpg" alt="Your Name" />
-        + 최적화된 이미지(Resizing & Optimizing images 제공)
+        최적화된 이미지(Resizing & Optimizing images 제공)
         + ```
             import Image from 'next/image'
             
@@ -38,7 +38,6 @@
                     width={144} // Desired size with correct aspect ratio
                     alt="Your Name"
                 />)
-        ```
 
     - Pre-rendering and Data Fetching
 
