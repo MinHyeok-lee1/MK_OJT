@@ -117,35 +117,44 @@
     - Next.js앱에 TypeScript로 변환하는 방법
         + Next.js Specific Types
         + 정적 생성 및 서버 측 렌더링 getStaticProps, getStaticPath 및 getServerSideProps의 경우 각각 GetStaticProps, GetStaticPaths 및 GetServerSideProps 유형을 사용할 수 있습니다.
-        + ```
-            import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next'
+            + ```
+                import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next'
 
-            export const getStaticProps: GetStaticProps = async context => {
-            // ...
-            }
+                export const getStaticProps: GetStaticProps = async context => {
+                // ...
+                }
 
-            export const getStaticPaths: GetStaticPaths = async () => {
-            // ...
-            }
+                export const getStaticPaths: GetStaticPaths = async () => {
+                // ...
+                }
 
-            export const getServerSideProps: GetServerSideProps = async context => {
-            // ...
-            }
+                export const getServerSideProps: GetServerSideProps = async context => {
+                // ...
+                }
 
         + API 경로에 기본 제공 유형을 사용하는 방법<br>
-        + ```
-            import { NextApiRequest, NextApiResponse } from 'next'
+            + ```
+                import { NextApiRequest, NextApiResponse } from 'next'
 
-            export default (req: NextApiRequest, res: NextApiResponse) => {
-            // ...
-            }
+                export default (req: NextApiRequest, res: NextApiResponse) => {
+                // ...
+                }
         
         + 사용자 지정 앱: 다음과 같이 pages/_app.js를 pages/_app.tsx로 변환하고 기본 제공 AppProps 유형을 사용가능
-        + ```
-            import { AppProps } from 'next/app'
+            + ```
+                import { AppProps } from 'next/app'
 
-            function App({ Component, pageProps }: AppProps) {
-            return <Component {...pageProps} />
-            }
+                function App({ Component, pageProps }: AppProps) {
+                return <Component {...pageProps} />
+                }
 
-            export default App
+                export default App
+
+        +  blog앱의TypeScript로 변환
+            components/date.js: Update to <b>date.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/components/date.tsx)
+            components/layout.js: Update to <b>layout.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/components/layout.tsx)
+            lib/posts.js: Update to <b>posts.ts</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/lib/posts.ts)
+            pages/posts/\[id].js: Update to <b>\[id].tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/pages/posts/%5Bid%5D.tsx)
+            pages/index.js: Update to <b>index.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/pages/index.tsx)
+            pages/_app.js: Update to <b>_app.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/pages/_app.tsx)
+            pages/api/hello.js: Update to <b>hello.ts</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/pages/api/hello.ts)
