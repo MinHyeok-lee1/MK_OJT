@@ -11,14 +11,17 @@
     - SSR vs CSR
     - CSR(Client-side routing)
     - SEO<br>
+
 * BASICS
     - Create a Next.js App
+        + <pre>npx create-next-app nextjs-blog --use-npm --example "https://github.com/vercel/next-learn/tree/master/basics/learn-starter"</pre>
     - Navigate Between Pages
     - Assets, Metadata, and CSS
     - Pre-rendering and Data Fetching
     - Dynamic Routes
     - API Routes
     - Deploying Your Next.js APP<br>
+    
 * SERARCH ENGINE OPTIMIZATION
     - Introduction to SEO
     - Crawling and Indexing
