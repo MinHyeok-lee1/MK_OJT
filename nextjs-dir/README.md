@@ -151,10 +151,16 @@
                 export default App
 
         +  blog앱의TypeScript로 변환
-            components/date.js: Update to <b>date.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/components/date.tsx)
-            components/layout.js: Update to <b>layout.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/components/layout.tsx)
-            lib/posts.js: Update to <b>posts.ts</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/lib/posts.ts)
-            pages/posts/\[id].js: Update to <b>\[id].tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/pages/posts/%5Bid%5D.tsx)
-            pages/index.js: Update to <b>index.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/pages/index.tsx)
-            pages/_app.js: Update to <b>_app.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/pages/_app.tsx)
-            pages/api/hello.js: Update to <b>hello.ts</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/pages/api/hello.ts)
+            + components/date.js: Update to <b>date.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/components/date.tsx)
+            
+            + components/layout.js: Update to <b>layout.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/components/layout.tsx)
+
+            + lib/posts.js: Update to <b>posts.ts</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/lib/posts.ts)
+
+            + pages/posts/\[id].js: Update to <b>\[id].tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/pages/posts/%5Bid%5D.tsx)
+
+            + pages/index.js: Update to <b>index.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/pages/index.tsx)
+
+            + pages/_app.js: Update to <b>_app.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/pages/_app.tsx)
+
+            + pages/api/hello.js: Update to <b>hello.ts</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/pages/api/hello.ts)
