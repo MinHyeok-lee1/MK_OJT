@@ -16,24 +16,44 @@
     - Create a Next.js App
         + Next.js app BASICS를 수행하기 이전에 terminal에서 해당 app을 구동할 개발환경 디렉토리로 가서 아래 명령어를 입력한다.
         + <pre>npx create-next-app nextjs-blog --use-npm --example "https://github.com/vercel/next-learn/tree/master/basics/learn-starter"</pre>
+
     - Navigate Between Pages
         + 우선 새로운 페이지를 생성한다.
         + <pre>import Link from 'next/link'</pre>
-        + \<a href="/">Back to home\</a>
-        + \<Link href="/">\<a>Back to home\</a>\</Link>
+        + \<a href="/'주소">주소로 라우팅\</a> => 새로고침된다.(속도 down)
+        + \<Link href="/주소">\<a>주소로 라우팅\</a>\</Link> => 화면만 바뀐다. (속도 up)
+
     - Assets, Metadata, and CSS
+        + 정적 파일(Assets)을 사용하는 방법은 아래와 같다.
+        + 최적화되지 않은 이미지
+        + <pre>\<img src="/images/profile.jpg" alt="Your Name" /></pre>
+        + 최적화된 이미지(Resizing & Optimizing images 제공)
+        + <pre>import Image from 'next/image'
+        const YourComponent = () => (</pre>
+
     - Pre-rendering and Data Fetching
+
     - Dynamic Routes
+
     - API Routes
-    - Deploying Your Next.js APP<br>
+
+    - Deploying Your Next.js APP
+    <br>
     
 * SERARCH ENGINE OPTIMIZATION
     - Introduction to SEO
+
     - Crawling and Indexing
+
     - Rendering and Ranking
+
     - Preformance & Core Web Vitals
+
     - Improving your Core Web Vitals
-    - Monitoring your Core Web Vitals<br>
+
+    - Monitoring your Core Web Vitals
+    <br>
 
 * EXCEL
-    - TypeScript<br>
+    - TypeScript
+    <br>
