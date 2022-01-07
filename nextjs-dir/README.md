@@ -11,7 +11,8 @@
     - SSR vs CSR
     - CSR(Client-side routing)
     - SEO
-    - SCSS vs SASS <br>
+    - SCSS vs SASS
+    - Headless vs Suverless<br>
 
 * BASICS
     - Create a Next.js App
@@ -69,9 +70,18 @@
             export default function handler(req, res) {
                 res.status(200).json({ text: 'Hello' })
             }
+
             결과: http://localhost:3000/api/hello에 {"text":"Hello"} 출력.
 
     - Deploying Your Next.js APP
+        + Next.js 앱을 Vercel에 배포하는 방법.
+        + DPS 워크플로우: Develop(개발), Preview(미리보기) 및 Ship(배송)
+            ```
+            Develop: Next.js로 코드를 작성하고 핫 재로딩 기능을 활용하기 위해 실행 중인 Next.js 개발 서버를 사용했습니다.
+            Preview: 우리는 GitHub의 지점에 변경 사항을 푸시했고, Vercel은 URL을 통해 제공되는 미리보기 배포를 만들었습니다. 피드백을 위해 이 미리보기 URL을 다른 사람과 공유할 수 있습니다. 코드 검토 외에도 배포 미리 보기를 수행할 수 있습니다.
+            Ship: pull 요청을 main에 병합하여 프로덕션으로 전송했습니다.
+            Next.js 앱을 개발할 때 이 워크플로를 사용하는 것이 좋습니다. 앱을 더 빨리 반복할 수 있습니다.
+        + Next.js 앱을 자체 호스팅 공급자에 배포하는 방법.
     <br>
     
 * SERARCH ENGINE OPTIMIZATION
