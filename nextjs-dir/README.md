@@ -31,7 +31,7 @@
         + <pre>import Image from 'next/image'
             <br>
             const YourComponent = () => ( 
-                \<Image src="/images/profile.jpg"  height={144} width={144} // Desired size with correct aspect ratio alt="Your Name" />)
+                <\Image src="/images/profile.jpg"  height={144} width={144} // Desired size with correct aspect ratio alt="Your Name" />)
         </pre>
 
     - Pre-rendering and Data Fetching
