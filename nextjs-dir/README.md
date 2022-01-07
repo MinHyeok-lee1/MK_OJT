@@ -10,7 +10,8 @@
     - Pre-rendering(SG, SSR)
     - SSR vs CSR
     - CSR(Client-side routing)
-    - SEO<br>
+    - SEO
+    - SCSS vs SASS <br>
 
 * BASICS
     - Create a Next.js App
@@ -39,9 +40,11 @@
                     alt="Your Name"
                 />)
 
-        + Metadata => ex) import Head from 'next/head'
-    - Pre-rendering and Data Fetching
+        + Metadata => ex) import Head from 'next/head' 이후 \<Head>Head 내용\</Head>
+        + 스타일의 적용, Thrid-Party JavaScript, jsx, Layout Component, Global Styles, Sass
 
+    - Pre-rendering and Data Fetching
+        + Pre-rendering(ServerSideRendering vs Static Generation)
     - Dynamic Routes
 
     - API Routes
