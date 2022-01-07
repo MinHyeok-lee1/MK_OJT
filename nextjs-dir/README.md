@@ -112,8 +112,7 @@
             # If you’re using Yarn
             <b>yarn add --dev typescript @types/react @types/node</b>
             </pre>
-        + tsconfig.json는 사용자가 지정하는 파일이고 Next.env.d.ts는 TypeScript 컴파일러가 Next.js 유형을 선택하는 것이므로 해당 파일을 touch하면 안된다.
-
+        + tsconfig.json는 사용자가 지정하는 파일이고 Next.env.d.ts는 TypeScript 컴파일러가 Next.js 유형을 선택하는 것이므로 해당 파일을 touch하면 안된다.<br>
         
     - Next.js앱에 TypeScript로 변환하는 방법
         + Next.js Specific Types
