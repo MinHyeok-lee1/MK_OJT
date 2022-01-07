@@ -113,6 +113,7 @@
             <b>yarn add --dev typescript @types/react @types/node</b>
             </pre>
         + tsconfig.json는 사용자가 지정하는 파일이고 Next.env.d.ts는 TypeScript 컴파일러가 Next.js 유형을 선택하는 것이므로 해당 파일을 touch하면 안된다.
+        
     - Next.js앱에 TypeScript로 변환하는 방법
         + Next.js Specific Types
         + 정적 생성 및 서버 측 렌더링 getStaticProps, getStaticPath 및 getServerSideProps의 경우 각각 GetStaticProps, GetStaticPaths 및 GetServerSideProps 유형을 사용할 수 있습니다.
