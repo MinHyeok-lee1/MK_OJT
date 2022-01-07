@@ -104,5 +104,11 @@
     - TypeScript
         + tsconfig.json 생성: 시작하려면 프로젝트의 루트에 빈 tsconfig.json파일이 있어야 함
         + <pre>touch tsconfig.json</pre>
-        + 
+        + <pre>
+            # If you’re using npm
+            npm install --save-dev typescript @types/react @types/node
+
+            # If you’re using Yarn
+            yarn add --dev typescript @types/react @types/node
+            </pre>
     <br>
