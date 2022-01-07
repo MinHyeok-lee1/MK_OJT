@@ -29,7 +29,8 @@
         + \<img src="/images/profile.jpg" alt="Your Name" />
         + 최적화된 이미지(Resizing & Optimizing images 제공)
         + <pre>import Image from 'next/image'</pre>
-        + <pre>const YourComponent = () => ( \<Image src="/images/profile.jpg" // Route of the image file</pre>
+        + <pre>const YourComponent = () => ( 
+            \<Image src="/images/profile.jpg" // Route of the image file</pre>
         + <pre>height={144} // Desired size with correct aspect ratio</pre>
         + <pre>width={144} // Desired size with correct aspect ratio</pre>
         + <pre>alt="Your Name"</pre>
