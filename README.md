@@ -31,12 +31,12 @@
 * Push, Pull: Push 순서:git ( add . or *-> commit -m 'message'-> push <=> pull )<br>
 * READNE.md: 현재 작성하듯 프로젝트의 설명등의 형상관리를 할 수 있음(추가로 사용설명서 등..)<br><br>
 
-* [1월 3주차 OJT KEYWORD: Next.js Dir(dir)](https://github.com/MinHyeok-lee1/MK_OJT/tree/master/nextjs-dir)
+* [1월 3주차 OJT KEYWORD: Next.js(dir)](https://github.com/MinHyeok-lee1/MK_OJT/tree/master/nextjs-dir)
 1) nextjs.org 튜토리얼 클론 코딩 - 로컬 서버의 개인 작업공간 이용<br>
 2) Git을 통해 소스코드 관리<br>
 3) 학습 내용을 소스코드의 주석 및 README.md 파일로 정리<br><br>
 
-* [1월 4주차 OJT KEYWORD: Nest.js Dir(dir)](https://github.com/MinHyeok-lee1/MK_OJT/tree/master/nestjs-dir)
+* [1월 4주차 OJT KEYWORD: Nest.js(dir)](https://github.com/MinHyeok-lee1/MK_OJT/tree/master/nestjs-dir)
 1) nestjs.com 튜토리얼 클론 코딩 - 로컬 서버의 개인 작업공간 이용<br>
 2) Git을 통해 소스코드 관리<br>
 3) 학습 내용을 소스코드의 주석 및 README.md 파일로 정리<br><br>
