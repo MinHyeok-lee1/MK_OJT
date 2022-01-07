@@ -28,11 +28,10 @@
         + 최적화되지 않은 이미지
         + \<img src="/images/profile.jpg" alt="Your Name" />
         + 최적화된 이미지(Resizing & Optimizing images 제공)
-        + <pre>import Image from 'next/image'
+        + ```import Image from 'next/image'
             <br>
             const YourComponent = () => ( 
-                \<Image src="/images/profile.jpg"  height={144} width={144} // Desired size with correct aspect ratio alt="Your Name" />)
-        </pre>
+                \<Image src="/images/profile.jpg"  height={144} width={144} // Desired size with correct aspect ratio alt="Your Name" />)```
 
     - Pre-rendering and Data Fetching
 
