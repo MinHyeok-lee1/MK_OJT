@@ -81,6 +81,9 @@
             * Ship: pull 요청을 main에 병합하여 프로덕션으로 전송
             * Next.js 앱을 개발할 때 이 워크플로를 사용하는 것이 앱을 더 빨리 반복할 수 있어서 좋다.
         + Next.js 앱을 자체 호스팅 공급자에 배포하는 방법.
+            * package.json면 다음 build과 start스크립트
+            * npm run build, npm run start
+            * 팁 : 다음 과 같이 업데이트 하여 매개변수 를 허용 하도록 start스크립트를 사용자 정의할 수 있습니다 <pre>.package.jsonPORT"start": "next start -p $PORT"</pre>
     <br>
     
 * SERARCH ENGINE OPTIMIZATION
