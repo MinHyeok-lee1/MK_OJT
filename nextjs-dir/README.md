@@ -83,7 +83,7 @@
         + Next.js 앱을 자체 호스팅 공급자에 배포하는 방법.
             * package.json면 다음 build과 start스크립트
             * npm run build, npm run start
-            * 팁 : 다음 과 같이 업데이트 하여 매개변수 를 허용 하도록 start스크립트를 사용자 정의할 수 있습니다 <pre>.package.jsonPORT"start": "next start -p $PORT"</pre>
+            * 팁 : 다음 과 같이 업데이트 하여 매개변수 를 허용 하도록 start스크립트를 사용자 정의할 수 있습니다 <pre>.package.json에서 PORT정의 => "start": "next start -p $PORT"</pre>
     <br>
     
 * SERARCH ENGINE OPTIMIZATION
