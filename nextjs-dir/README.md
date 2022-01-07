@@ -45,6 +45,13 @@
 
     - Pre-rendering and Data Fetching
         + Pre-rendering(ServerSideRendering vs Static Generation)
+        + 데이터가 없는 상태에서 SG는 자동으로 정적 생성
+        + 데이터가 있는 상태에서(외부 데이터 엑세스) 
+        + SG는 getStaticProps를 사용하자. async가능, 사용자의 req보다 앞서 렌더링이 가능한 경우
+        + SSR은 getServerSideProps를 사용한다. 사용자의 req보다 앞서 렌더링이 가능하지 않고 자주 req가 있을경우 사용한다.
+        + CSR은 정적으로 만들고 추가로 채운다. (SG with out data + CSR)
+        + SWR이라는 hook을 사용하면 clinet side에서의 data fetching을 처리해준다.
+        
     - Dynamic Routes
 
     - API Routes
