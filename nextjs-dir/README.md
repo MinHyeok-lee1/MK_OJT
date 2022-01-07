@@ -47,14 +47,29 @@
         + Pre-rendering(ServerSideRendering vs Static Generation)
         + 데이터가 없는 상태에서 SG는 자동으로 정적 생성
         + 데이터가 있는 상태에서(외부 데이터 엑세스) 
-        + SG는 getStaticProps를 사용하자. async가능, 사용자의 req보다 앞서 렌더링이 가능한 경우
+        + SG는 getStaticProps를 사용하자. async가능, 사용자의 req보다 앞서(build 타임) 렌더링이 가능한 경우
         + SSR은 getServerSideProps를 사용한다. 사용자의 req보다 앞서 렌더링이 가능하지 않고 자주 req가 있을경우 사용한다.
-        + CSR은 정적으로 만들고 추가로 채운다. (SG with out data + CSR)
+        + CSR은 정적으로 만들고 추가로 채운다. (SG with out data + CSR). 사용자 개인 대쉬보드, SEO가 필요없을 시
         + SWR이라는 hook을 사용하면 clinet side에서의 data fetching을 처리해준다.
-        
+
     - Dynamic Routes
+        + getStaticPaths를 사용하여 동적 경로가 있는 페이지를 정적으로 생성하는 방법.
+        + getStaticProps를 작성하여 각 blog post의 데이터를 가져오는 방법.
+        + remark를 사용하여 markdown를 렌더링하는 방법.
+        + 날짜 문자열을 예쁘게 인쇄하는 방법.
+        + dynamic routes가 있는 페이지에 연결하는 방법.
+        + dynamic routes에 대한 유용한 정보
 
     - API Routes
+        + API Route를 만드는 방법 => 
+        + 수신 데이터를 데이터베이스에 저장하는 중, 타사 API와 안전하게 통신, CMS에서 미발송 내용 미리보기 상황에 API Route를 사용하는 것이 좋다.
+        + ```
+            다음 코드를 사용하여 pages/api에 hello.js라는 파일을 만듭니다.
+
+            export default function handler(req, res) {
+                res.status(200).json({ text: 'Hello' })
+            }
+            결과: http://localhost:3000/api/hello에 {"text":"Hello"} 출력.
 
     - Deploying Your Next.js APP
     <br>
