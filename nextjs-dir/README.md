@@ -104,7 +104,7 @@
     - TypeScript
         + tsconfig.json 생성: 시작하려면 프로젝트의 루트에 빈 tsconfig.json파일이 있어야 함
         + <pre><b>touch tsconfig.json</b></pre>
-        + 이제 개발 서버(npm run dev 또는 yarn dev)를 시작/재시작해 보십시오. 다음과 같은 경고가 표시, TypeScript를 사용하려고 하지만 필수 패키지가 설치되지 않음, 다음 지침에 따라 TypeScript를 설치합니다.
+        + 이제 개발 서버(npm run dev 또는 yarn dev)를 시작/재시작 이후, 다음과 같은 경고가 표시, TypeScript를 사용하려고 하지만 필수 패키지가 설치되지 않음, 다음 지침에 따라 TypeScript를 설치.
         + <pre>
             # If you’re using npm
             <b>npm install --save-dev typescript @types/react @types/node</b>
