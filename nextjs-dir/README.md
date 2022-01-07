@@ -18,7 +18,7 @@
     - Create a Next.js App
         + Next.js app BASICS를 수행하기 이전에 terminal에서 해당 app을 구동할 개발환경 디렉토리로 가서 아래 명령어를 입력한다.
         + <pre>npx create-next-app nextjs-blog --use-npm --example "https://github.com/vercel/next-learn/tree/master/basics/learn-starter"</pre>
-
+    <br>
     - Navigate Between Pages
         + 우선 새로운 페이지를 생성한다.
         + <pre>import Link from 'next/link'</pre>
