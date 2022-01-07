@@ -19,7 +19,8 @@
     - Navigate Between Pages
         + 우선 새로운 페이지를 생성한다.
         + <pre>import Link from 'next/link'</pre>
-        + 
+        + \<a href="/">Back to home\</a>
+        + \<Link href="/">\<a>Back to home\</a>\</Link>
     - Assets, Metadata, and CSS
     - Pre-rendering and Data Fetching
     - Dynamic Routes
@@ -36,7 +37,3 @@
 
 * EXCEL
     - TypeScript<br>
-
-\<a href="/">Back to home\</a>
-
-\<Link href="/">\<a>Back to home\</a>\</Link>
