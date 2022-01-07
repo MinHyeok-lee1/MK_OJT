@@ -37,5 +37,5 @@
 * EXCEL
     - TypeScript<br>
 
-/<a href="/">Back to home</a>
-/<Link href="/"><a>Back to home</a></Link>
+\<a href="/">Back to home</a>
+\<Link href="/"><a>Back to home</a></Link>
