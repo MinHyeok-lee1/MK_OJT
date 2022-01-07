@@ -35,7 +35,7 @@
                 height={144} // Desired size with correct aspect ratio
                 width={144} // Desired size with correct aspect ratio
                 alt="Your Name"
-            /\>)
+              />)
             </pre>
 
     - Pre-rendering and Data Fetching
