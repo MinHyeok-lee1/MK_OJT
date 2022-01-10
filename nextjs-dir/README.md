@@ -165,15 +165,16 @@
 
             + ``` 
                 홈페이지 : https://www.example.com → pages/index.js
+
                 목록 : https://www.example.com/products → 또는 pages/products.jspages/products/index.js
-                세부 사항 : → https://www.example.com/products/product pages/products/product.js
-                
+
+                세부 사항 : → https://www.example.com/products/product pages/products/product.js 
             + 블로그 또는 전자 상거래 사이트의 경우 제품 ID 또는 블로그 이름을 URL의 슬러그로 사용하고 싶을 것입니다. 이것을 동적 라우팅 이라고 합니다 .
 
             + ```
                 제품: https://www.example.com/products/nextjs-shirt → pages/products/[product].js
-                블로그: https://www.example.com/blog/seo-in-nextjs → pages/blog/[blog-name].js
 
+                블로그: https://www.example.com/blog/seo-in-nextjs → pages/blog/[blog-name].js
             + 동적 라우팅을 사용하려면 products또는 blogs하위 폴더 내의 페이지 이름에 대괄호를 추가할 수 있습니다 .
 
     - Preformance & Core Web Vitals
