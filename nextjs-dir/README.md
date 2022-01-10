@@ -351,6 +351,34 @@
             + 스크립트 구성 요소는 strategy최적의 로드를 위해 스크립트를 가져와 실행할 시기를 결정할 수 있는 속성을 도입했습니다. LCP(Large Contentful Paint)에 부정적인 영향을 미치지 않으려면 대부분의 타사 스크립트는 페이지의 모든 콘텐츠 로드가 완료된 후, 즉 페이지가 대화형이 된 직후( strategy="afterInteractive") 또는 브라우저 유휴 시간( strategy="lazyOnload") 동안 느리게 로드되도록 연기해야 ​​합니다.
     
     - Monitoring your Core Web Vitals
+        + Next.js Analytics [Nex.js 분석](https://nextjs.org/analytics)
+
+        + Custom Reporting
+            + ```
+                npx create-next-app nextjs-lighthouse --use-npm --example "https://github.com/vercel/next-learn/tree/master/seo"
+            + pages/_app.js다음 함수를 열고 내보냅니다.
+            + ```
+                export function reportWebVitals(metric) {
+                   console.log(metric)
+                }
+            + 그런 다음 애플리케이션을 빌드하고 시작합니다.
+            + ```
+                npm run build && npm run start
+            + Chrome을 열면 DevTools 콘솔 내부에 메트릭이 표시됩니다. 또한 FID 는 페이지와 상호 작용할 때만 트리거됩니다.
+
+        + Data Studio (Chrome User Experience Report) [데이터 스튜디오(Chrome 사용자 경험 보고서)](https://developers.google.com/web/tools/chrome-user-experience-report)
+
+        + Other Tools
+            + 다음 도구에서 필드 데이터 수집을 찾을 수 있습니다.
+            + PageSpeed Insights : Google의 Page Speed 측정 도구입니다.
+            + Chrome 사용자 경험 보고서 : 필드 데이터 오픈 소스 데이터 세트.
+            + Search Console : Google 검색, 핵심 성능 보고서.
+
+            실험실 데이터를 찾고 있다면 Google은 다음과 같은 여러 측정 도구도 제공합니다.
+            + Lighthouse : 웹페이지 품질을 개선하기 위한 Google의 오픈 소스 자동화 도구입니다.
+            + Chrome DevTools : Google Chrome 브라우저에 직접 내장된 웹 개발자 도구 모음입니다.
+
+            + FID는 필드 데이터를 통해서만 측정할 수 있기 때문에 두 도구 모두 FID(First Input Delay) 대신 총 차단 시간(TBT) 을 사용해야 합니다.
     <br>
 
 * <b>EXCEL</b>
