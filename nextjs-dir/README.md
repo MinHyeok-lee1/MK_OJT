@@ -23,6 +23,7 @@
         + 위에서 언급했듯이 일반적으로 클라이언트 측 렌더링은 최적의 SEO를 위해 권장 되지 않습니다.
 
         + CSR은 데이터가 많은 대시보드, 계정 페이지 또는 검색 엔진 색인에 포함될 필요가 없는 페이지에 적합합니다.
+    
     - SEO
 
     - SCSS vs SASS
@@ -222,7 +223,56 @@
                 + <b>CLS(Cumulative Layout Shift)는 웹 페이지의 시각적 안정성을 측정.</b>
 
     - Improving your Core Web Vitals
+        + Lighthouse 작동 방식의 예를 보려면 다음 홈페이지를 사용합니다. 'https://nextjs.org'
+            1. chrome을 엽니다.
+            2. 시크릿창에서 https://nextjs.org로 이동합니다.
+            3. DevTools를 열고 Lighthouse 탭을 클릭합니다.
+            4. 보고서 생성을 클릭합니다.
+            
+            + 시크릿창에서 하는 이유: 다른 플러그인(확장 프로그램)이 영향을 끼칠 수 있음
+        
+        + Image Component and Automatic Image Optimization(img => Image)
+        + ```
+                import Image from 'next/image'
 
+                // Before
+                <img src="large-image.jpg" alt="Large Image" />
+
+                // After
+                <Image src="/large-image.jpg" alt="Large Image" width={3048} height={2024} />
+        + Dynamic Imports
+        + ```
+                import Fuse from 'fuse.js'
+                import _ from 'lodash'
+
+                <input
+                type="text"
+                placeholder="Country search..."
+                className={styles.input}
+                onChange={async e => {
+                    const { value } = e.currentTarget
+                    // Dynamically load libraries
+                    const Fuse = (await import('fuse.js')).default
+                    const _ = (await import('lodash')).default
+
+                    const fuse = new Fuse(countries, {
+                    keys: ['name'],
+                    threshold: 0.3
+                    })
+
+                    const searchResult = fuse.search(value).map(result => result.item)
+
+                    const updatedResults = searchResult.length ? searchResult : countries
+                    setResults(updatedResults)
+
+                    // Fake analytics hit
+                    console.info({
+                    searchedAt: _.now()
+                    })
+                }}
+                />
+
+        + Dynamic Imports for Components
     - Monitoring your Core Web Vitals
     <br>
 
