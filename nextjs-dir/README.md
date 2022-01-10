@@ -379,6 +379,8 @@
             + Chrome DevTools : Google Chrome 브라우저에 직접 내장된 웹 개발자 도구 모음입니다.
 
             + FID는 필드 데이터를 통해서만 측정할 수 있기 때문에 두 도구 모두 FID(First Input Delay) 대신 총 차단 시간(TBT) 을 사용해야 합니다.
+
+            + <b>실적을 추적하기에 가장 좋은 시기는 실제 사용자를 모니터링하여 시간 경과에 따른 추적</b>
     <br>
 
 * <b>EXCEL</b>
