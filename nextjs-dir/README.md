@@ -348,6 +348,8 @@
                         </div>
                     )
                 }
+            + 스크립트 구성 요소는 strategy최적의 로드를 위해 스크립트를 가져와 실행할 시기를 결정할 수 있는 속성을 도입했습니다. LCP(Large Contentful Paint)에 부정적인 영향을 미치지 않으려면 대부분의 타사 스크립트는 페이지의 모든 콘텐츠 로드가 완료된 후, 즉 페이지가 대화형이 된 직후( strategy="afterInteractive") 또는 브라우저 유휴 시간( strategy="lazyOnload") 동안 느리게 로드되도록 연기해야 ​​합니다.
+    
     - Monitoring your Core Web Vitals
     <br>
 
