@@ -7,12 +7,22 @@
 ## Next.js 클론 코딩 웹사이트 => [nextjs.org](https://nextjs.org/learn)
 
 * <b>WORD</b>
-    - Pre-rendering(SG, SSR)
+    - Pre-rendering(SSG, SSR)
+        + SSG(Static Site Generation): 정적 사이트 생성 은 빌드 시 HTML이 생성되는 곳입니다. 그런 다음 이 HTML이 각 요청에 사용됩니다. 정적 사이트 생성은 사전 렌더링 되기 때문에 페이지 로드에 모든 HTML이 있을 뿐만 아니라 페이지 성능에도 도움이 되므로 SEO를 위한 최고의 렌더링 전략 유형입니다. 이제 SEO와 관련하여 또 다른 순위 요소입니다.
 
-    - SSR vs CSR
+        + SSR(Server Side Rendering): SSG와 마찬가지로 SSR( Server-Side Rendering )은 사전 렌더링되므로 SEO에도 적합합니다. SSG에서와 같이 빌드 시 생성되는 대신 SSR의 HTML은 요청 시 생성됩니다. 이것은 매우 동적인 페이지가 있는 경우에 유용합니다.
 
-    - CSR(Client-side routing)
+    - 증분 정적 재생(ISR)
+        + 매우 많은 페이지가 있는 경우 빌드 시 페이지를 모두 생성하는 것이 불가능할 수 있습니다. Next.js를 사용하면 사이트를 구축한 후 정적 페이지를 만들거나 업데이트할 수 있습니다.
 
+        + 증분 정적 재생을 통해 개발자와 콘텐츠 편집자는 전체 사이트를 다시 빌드할 필요 없이 페이지별로 정적 생성을 사용할 수 있습니다. ISR을 사용하면 수백만 페이지로 확장하면서 정적의 이점을 유지할 수 있습니다.
+
+    - 클라이언트 측 렌더링(CSR)
+        + 클라이언트 측 렌더링을 사용하면 개발자가 JavaScript를 사용하여 브라우저에서 웹 사이트를 완전히 렌더링 할 수 있습니다. 초기 페이지 로드 시 JavaScript를 가져와 브라우저가 모든 것을 컴파일할 때까지 단일 HTML 파일은 일반적으로 콘텐츠가 거의 또는 전혀 없이 제공됩니다.
+
+        + 위에서 언급했듯이 일반적으로 클라이언트 측 렌더링은 최적의 SEO를 위해 권장 되지 않습니다.
+
+        + CSR은 데이터가 많은 대시보드, 계정 페이지 또는 검색 엔진 색인에 포함될 필요가 없는 페이지에 적합합니다.
     - SEO
 
     - SCSS vs SASS
@@ -116,11 +126,52 @@
     
 * <b>SERARCH ENGINE OPTIMIZATION</b>
     - Introduction to SEO
+        + SEO
+
+        + Search System
+
+        + Webcrawlers
 
     - Crawling and Indexing
+        + Status Codes
+
+        + Robots.txt
+
+        + XML Sitemaps
+
+        + Special Tags
+
+        + Canonical Tags: 페이지 중복 제거를 위한 표준 태그
 
     - Rendering and Ranking
+        + 렌더링 전략: 정적 사이트 생성(SSG), 서버 측 렌더링(SSR), 증분 정적 재생(ISR), 클라이언트 측 렌더링(CSR)
 
+        + SEO에서 가장 중요한 것은 JavaScript 없이 페이지 로드 시 페이지 데이터와 메타데이터를 사용할 수 있다는 것입니다. 이 경우 SSG 또는 SSR이 최선의 선택이 될 것입니다.
+
+        + Next.js의 주요 장점 중 하나는 위의 각 렌더링 방법을 페이지 단위로 수행할 수 있다는 것입니다. 블로그 게시물을 정적으로 생성하고 고객 계정 대시보드 클라이언트 측을 렌더링한 다음 서버 측에서 렌더링하려는 뉴스 피드를 원할 수 있습니다.
+
+        + URL 구조 원칙
+            + Semantic: 의미 있는 URL을 사용하는 것이 가장 좋습니다. 즉, ID나 난수 대신 단어를 사용해야합니다.
+            
+            + Patterns that are logical and consistent: URL은 페이지 간에 일관된 패턴을 따라야 합니다. 예를 들어, 가지고 있는 각 제품에 대해 다른경로를 사용하는 대신 모든 제품 페이지를 그룹화하는 폴더를 원합니다.
+
+            + 키워드 중심: Googole은 여전히 웹사이트에 포함된 키워드에 시스템의 상당 부분을 기반으로 합니다. 페이지의 목적을 쉽게 이해할 수 있도록 URL에 키워드를 사용할 수 있습니다.
+
+            + Not paramenter-based: 매개변수를 사용하여 URL을 작성하는 것은 일반적으로 좋은 생각이 아닙니다. 대부분의 경우 의미가 없으며 검색 엔진에서 혼동을 일으키고 결과에서 순위를 낮출 수 있습니다.
+
+            + 경로지정: Next.js는 페이지 개념을 기반으로 구축된 파일 시스템 라우팅을 사용 합니다. 파일이 디렉토리에 추가되면 자동으로 경로로 사용할 수 있습니다. 디렉토리 내의 파일과 폴더 는 가장 일반적인 패턴을 정의하는 데 사용할 수 있습니다.
+
+            몇 가지 간단한 URL과 이를 Next.js 라우터에 추가하는 방법을 살펴보겠습니다.
+
+            홈페이지 : https://www.example.com → pages/index.js
+            목록 : https://www.example.com/products → 또는 pages/products.jspages/products/index.js
+            세부 사항 : → https://www.example.com/products/product pages/products/product.js
+            블로그 또는 전자 상거래 사이트의 경우 제품 ID 또는 블로그 이름을 URL의 슬러그로 사용하고 싶을 것입니다. 이것을 동적 라우팅 이라고 합니다 .
+
+            제품: https://www.example.com/products/nextjs-shirt → pages/products/[product].js
+            블로그: https://www.example.com/blog/seo-in-nextjs → pages/blog/[blog-name].js
+            동적 라우팅을 사용하려면 products또는 blogs하위 폴더 내의 페이지 이름에 대괄호를 추가할 수 있습니다 .
+            
     - Preformance & Core Web Vitals
 
     - Improving your Core Web Vitals
