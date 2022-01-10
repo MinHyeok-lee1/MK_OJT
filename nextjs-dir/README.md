@@ -177,6 +177,17 @@
                 블로그: https://www.example.com/blog/seo-in-nextjs → pages/blog/[blog-name].js
             + 동적 라우팅을 사용하려면 products또는 blogs하위 폴더 내의 페이지 이름에 대괄호를 추가할 수 있습니다 .
 
+            + SEO에서 제목 태그(title)이 중요하다. 다음은 제목태그의 예시이다.
+            
+            + ```
+                <title>iPhone 12 XS Max For Sale in Colorado - Big Discounts | Apple</title>
+            
+            + SEO에서 설명 메타 태그는 또다른 중요한 SEO 요소이지만 제목보다 덜 중요하다, Google에 따르면 이 요소는 순위 지정 목적으로 고려되지 않지만 검색 결과의 클릭률에 영향을 줄 수 있습니다.
+
+            + 설명 메타 태그를 사용하여 제목의 정보를 보완하세요. 제목에 맞지 않는 키워드가 있는 경우 여기에 콘텐츠에 대한 더 많은 키워드를 입력하세요. 이러한 키워드는 사용자의 검색에 포함된 경우 굵게 표시됩니다. 다음은 HTML의 설명 메타태그 예:
+            
+            + ```
+                <title>iPhone 12 XS Max For Sale in Colorado - Big Discounts | Apple</title>
     - Preformance & Core Web Vitals
 
     - Improving your Core Web Vitals
