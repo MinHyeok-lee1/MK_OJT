@@ -232,47 +232,122 @@
             + 시크릿창에서 하는 이유: 다른 플러그인(확장 프로그램)이 영향을 끼칠 수 있음
         
         + Image Component and Automatic Image Optimization(img => Image)
-        + ```
-                import Image from 'next/image'
+            + ```
+                    import Image from 'next/image'
 
-                // Before
-                <img src="large-image.jpg" alt="Large Image" />
+                    // Before
+                    <img src="large-image.jpg" alt="Large Image" />
 
-                // After
-                <Image src="/large-image.jpg" alt="Large Image" width={3048} height={2024} />
-        + Dynamic Imports
-        + ```
-                import Fuse from 'fuse.js'
-                import _ from 'lodash'
+                    // After
+                    <Image src="/large-image.jpg" alt="Large Image" width={3048} height={2024} />
+            
+        + Dynamic Imports: 동적 가져오기를 사용하면 페이지 로드 시 "사용하지 않는 JavaScript 제거" 문제가 해결됩니다. 이는 또한 TTI(Time to Interactive)를 개선하여 FID(First Input Delay)를 개선하는 데 도움이 됩니다.
+            + ```
+                    import Fuse from 'fuse.js'
+                    import _ from 'lodash'
 
-                <input
-                type="text"
-                placeholder="Country search..."
-                className={styles.input}
-                onChange={async e => {
-                    const { value } = e.currentTarget
-                    // Dynamically load libraries
-                    const Fuse = (await import('fuse.js')).default
-                    const _ = (await import('lodash')).default
+                    <input
+                    type="text"
+                    placeholder="Country search..."
+                    className={styles.input}
+                    onChange={async e => {
+                        const { value } = e.currentTarget
+                        // Dynamically load libraries
+                        const Fuse = (await import('fuse.js')).default
+                        const _ = (await import('lodash')).default
 
-                    const fuse = new Fuse(countries, {
-                    keys: ['name'],
-                    threshold: 0.3
-                    })
+                        const fuse = new Fuse(countries, {
+                        keys: ['name'],
+                        threshold: 0.3
+                        })
 
-                    const searchResult = fuse.search(value).map(result => result.item)
+                        const searchResult = fuse.search(value).map(result => result.item)
 
-                    const updatedResults = searchResult.length ? searchResult : countries
-                    setResults(updatedResults)
+                        const updatedResults = searchResult.length ? searchResult : countries
+                        setResults(updatedResults)
 
-                    // Fake analytics hit
-                    console.info({
-                    searchedAt: _.now()
-                    })
-                }}
-                />
+                        // Fake analytics hit
+                        console.info({
+                        searchedAt: _.now()
+                        })
+                    }}
+                    />
 
         + Dynamic Imports for Components
+            + ```
+                    import dynamic from 'next/dynamic'
+
+                    // remove
+                    import CodeSampleModal from '../components/CodeSampleModal'
+
+                    //add 
+                    const CodeSampleModal = dynamic(() => import('../components/CodeSampleModal'), {
+                        ssr: false
+                    })
+
+                    // Wrapping CodeSampleModal
+                    {
+                        isModalOpen && (
+                            <CodeSampleModal
+                            isOpen={isModalOpen}
+                            closeModal={() => setIsModalOpen(false)}
+                            />
+                        )
+                    
+                    }
+            + 두 가지 최적화 제안이 남음
+            + HTTP2 사용 : 이 문제를 해결하기 위해 HTTP2를 지원하는 곳(예: Vercel )에 배포할 수 있음
+            + 이미지 요소에는 명시적 width 및 height : 이것은 실제로 등대 의 버그이며 사이트 성능에 영향을 미치지 않음
+
+        + Optimizing Fonts
+            + 데스크탑용 웹 페이지의 82%가  웹 글꼴을 사용합니다. 사용자 정의 글꼴은 사이트의 브랜딩, 디자인 및 브라우저 간/장치 일관성에 중요합니다. 그러나 웹 글꼴을 사용하면 성능이 저하되어서는 안 됩니다.
+
+            + Next.js에는 자동 웹폰트 최적화 가 내장되어 있습니다. 기본적으로 Next.js는 빌드 시 글꼴 CSS를 자동으로 인라인하여 글꼴 선언을 가져오기 위한 추가 왕복을 제거합니다. 이를 통해 FCP(First Contentful Paint) 및 LCP(Large Contentful Paint)가 개선되었습니다.
+
+            + 최적화하기 전에 추가 네트워크 요청이 필요합니다.
+            + ```
+                // Before optimizing
+                <link href="https://fonts.googleapis.com/css2?family=Inter" rel="stylesheet" />
+
+            + 최적화 후 Next.js는 글꼴 CSS를 인라인합니다.
+            + ```
+                // After optimizing
+                <style data-href="https://fonts.googleapis.com/css2?family=Inter">
+                     @font-face{font-family:'Inter';font-style:normal.....
+                </style>
+        
+        + Optimizing Third-Party Scripts
+            + 많은 애플리케이션은 분석, 광고 및 고객 지원 위젯과 같은 다양한 유형의 기능을 포함하기 위해 타사 JavaScript에 의존합니다. 그러나 타사 제작 코드를 포함하면 페이지 콘텐츠가 너무 일찍 로드될 경우 렌더링이 지연되고 사용자 성능에 영향을 줄 수 있습니다.
+
+            + Next.js는 모든 타사 스크립트에 대한 로드를 최적화 하는 내장 스크립트 구성 요소 를 제공하는 동시에 개발자에게 언제 가져와 실행할지 결정할 수 있는 옵션을 제공합니다.
+
+            + 스크립트 구성 요소 사용: 일반 HTML을 사용하면 외부 스크립트를 다음에 수동으로 추가해야 합니다 . next/head
+            + ```
+                import Head from 'next/head'
+
+                function IndexPage() {
+                    return (
+                        <div>
+                            <Head>
+                                <script src="https://www.googletagmanager.com/gtag/js?id=123" />
+                            </Head>
+                        </div>
+                    )
+                }
+            + Next.js 스크립트 구성 요소를 사용하면 next/head다음 을 사용할 필요 없이 구성 요소의 아무 곳에나 추가할 수 있습니다
+            + ``` 
+                import Script from 'next/script'
+
+                function IndexPage() {
+                    return (
+                        <div>
+                            <Script
+                                strategy="afterInteractive"
+                                src="https://www.googletagmanager.com/gtag/js?id=123"
+                            />
+                        </div>
+                    )
+                }
     - Monitoring your Core Web Vitals
     <br>
 
