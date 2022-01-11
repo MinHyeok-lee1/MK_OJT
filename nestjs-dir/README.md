@@ -6,6 +6,8 @@
 
 ## Nest.js 클론 코딩 웹사이트 => [nestjs.com](https://docs.nestjs.com/)
 
+## Nest.js란 무엇인가?
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
@@ -30,17 +32,17 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## 설명
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+[Nest](https://github.com/nestjs/nest) Nest.js Github Repository.
 
-## Installation
+## 설치
 
 ```bash
 $ npm install
 ```
 
-## Running the app
+## Nest.js 실행
 
 ```bash
 # development
@@ -53,7 +55,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## 테스트
 
 ```bash
 # unit tests
@@ -65,16 +67,6 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
 
