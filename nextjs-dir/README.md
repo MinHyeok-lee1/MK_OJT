@@ -410,54 +410,53 @@
 
     + 이제 개발 서버(npm run dev 또는 yarn dev)를 시작/재시작 이후, 다음과 같은 경고가 표시, TypeScript를 사용하려고 하지만 필수 패키지가 설치되지 않음, 다음 지침에 따라 TypeScript를 설치.
 
-    + <pre>
+    + ```
         # If you’re using npm
         <b>npm install --save-dev typescript @types/react @types/node</b>
 
         # If you’re using Yarn
         <b>yarn add --dev typescript @types/react @types/node</b>
-        </pre>
 
     + tsconfig.json는 사용자가 지정하는 파일이고 Next.env.d.ts는 TypeScript 컴파일러가 Next.js 유형을 선택하는 것이므로 해당 파일을 touch하면 안된다.
     
 - Next.js앱에 TypeScript로 변환하는 방법
-        + Next.js Specific Types
-        
-        + 정적 생성 및 서버 측 렌더링 getStaticProps, getStaticPath 및 getServerSideProps의 경우 각각 GetStaticProps, GetStaticPaths 및 GetServerSideProps 유형을 사용할 수 있습니다.
-            + ```
-                import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next'
+    + Next.js Specific Types
 
-                export const getStaticProps: GetStaticProps = async context => {
-                // ...
-                }
+    + 정적 생성 및 서버 측 렌더링 getStaticProps, getStaticPath 및 getServerSideProps의 경우 각각 GetStaticProps, GetStaticPaths 및 GetServerSideProps 유형을 사용할 수 있습니다.
+        + ```
+            import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next'
 
-                export const getStaticPaths: GetStaticPaths = async () => {
-                // ...
-                }
+            export const getStaticProps: GetStaticProps = async context => {
+            // ...
+            }
 
-                export const getServerSideProps: GetServerSideProps = async context => {
-                // ...
-                }
+            export const getStaticPaths: GetStaticPaths = async () => {
+            // ...
+            }
 
-        + API 경로에 기본 제공 유형을 사용하는 방법<br>
-            + ```
-                import { NextApiRequest, NextApiResponse } from 'next'
+            export const getServerSideProps: GetServerSideProps = async context => {
+            // ...
+            }
 
-                export default (req: NextApiRequest, res: NextApiResponse) => {
-                // ...
-                }
-        
-        + 사용자 지정 앱: 다음과 같이 pages/_app.js를 pages/_app.tsx로 변환하고 기본 제공 AppProps 유형을 사용가능
-            + ```
-                import { AppProps } from 'next/app'
+    + API 경로에 기본 제공 유형을 사용하는 방법<br>
+        + ```
+            import { NextApiRequest, NextApiResponse } from 'next'
 
-                function App({ Component, pageProps }: AppProps) {
-                return <Component {...pageProps} />
-                }
+            export default (req: NextApiRequest, res: NextApiResponse) => {
+            // ...
+            }
+    
+    + 사용자 지정 앱: 다음과 같이 pages/_app.js를 pages/_app.tsx로 변환하고 기본 제공 AppProps 유형을 사용가능
+        + ```
+            import { AppProps } from 'next/app'
 
-                export default App
+            function App({ Component, pageProps }: AppProps) {
+            return <Component {...pageProps} />
+            }
 
-        +  blog앱의TypeScript로 변환
+            export default App
+
+    +  blog앱의TypeScript로 변환
             + <b>components/date.js</b>: Update to <b>date.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/components/date.tsx)
 
             + <b>components/layout.js</b>: Update to <b>layout.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/components/layout.tsx)
