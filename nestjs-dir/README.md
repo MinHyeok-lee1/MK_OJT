@@ -53,8 +53,8 @@
 | boolean| 	참, 거짓을 나타내는 논리값| true, false| 
 | null|	"유효하지 않음"을 나타낸다|	null|
 | undefined|	값이 존재하지 않음. 즉, 변수 선언 후 "값이 할당되지 않음"을 나타낸다|	undefined|
-| number|	배정밀도 64비트 형식 IEEE 754의 값|	-(2^53 -1) 와 2^53 -1 사이의 정수와 실수<br>+Infinity, Infinity|
-| NaN (Not a Number) |bigint	Number의 범위를 넘어서는 정수를 안전하게 저장하고 연산할 수 있게 해 준다 |ex) const x = 2n ** 53n;<br>정수 끝에 n을 추가한다|
+| number|	배정밀도 64비트 형식 IEEE 754의 값|	-(2^53 -1) 와 2^53 -1 사이의 정수와 실수<br>+Infinity, Infinity|<br>NaN (Not a Number) |
+| bigint	Number의 범위를 넘어서는 정수를 안전하게 저장하고 연산할 수 있게 해 준다 |ex) const x = 2n ** 53n;<br>정수 끝에 n을 추가한다|
 | string	문자열. 변경 불가능(immutable)하다.	| 홑따옴표 또는 쌍따옴표로 둘러싸인 문자열| ex) 'hello', "world"|
 | symbol	유일하고 변경 불가능한 (immutable) 기본값(primitive value)| 객체 속성의 키로 사용할 수 있다	|
 ## License
