@@ -6,7 +6,7 @@
 
 ## Nest.js 클론 코딩 웹사이트 => [nestjs.com](https://docs.nestjs.com/)
 
-## 명령어 
+## Command
 - 설치
   ```bash
   $ npm install
