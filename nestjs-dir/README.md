@@ -49,12 +49,15 @@
   + 타입스크립트는 자바스크립트가 가지고 있는 자료형을 모두 포함합니다. 자바스크립트의 타입은 기본타이뱌(Primitive value)과 객체형(Object), 함수형(Function)이 있습니다. <b>typeof</b> 키워드를 이용하여 인스턴스의 타입을 알 수 있습니다.
 - 기본 타입
 
-|왼쪽 정렬|가운데 정렬|오른쪽 정렬| 
-|:---|:---:|---:|
 | typeof| 설명| 할당 가능한 값|
 | boolean| 	참, 거짓을 나타내는 논리값| true, false| 
-|내용1|내용2|내용3| 
-|내용1|내용2|내용3| 
+| null|	"유효하지 않음"을 나타낸다|	null
+| undefined|	값이 존재하지 않음. 즉, 변수 선언 후 "값이 할당되지 않음"을 나타낸다|	undefined
+| number|	배정밀도 64비트 형식 IEEE 754의 값|	-(2^53 -1) 와 2^53 -1 사이의 정수와 실수<br>+Infinity, Infinity
+| NaN (Not a Number) |bigint	Number의 범위를 넘어서는 정수를 안전하게 저장하고 연산할 수 있게 해 준다 |ex) const x = 2n ** 53n;
+| 정수 끝에 n을 추가한다
+| string	문자열. 변경 불가능(immutable)하다.	| 홑따옴표 또는 쌍따옴표로 둘러싸인 문자열| ex) 'hello', "world"
+| symbol	유일하고 변경 불가능한 (immutable) 기본값(primitive value)| 객체 속성의 키로 사용할 수 있다	
 ## License
 
 Nest is [MIT licensed](LICENSE).
