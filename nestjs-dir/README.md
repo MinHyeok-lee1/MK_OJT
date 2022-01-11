@@ -57,7 +57,18 @@
 | number|	배정밀도 64비트 형식 IEEE 754의 값|	-(2^53 -1) 와 2^53 -1 사이의 정수와 실수<br>+Infinity, Infinity<br>NaN (Not a Number) |
 | bigint|	Number의 범위를 넘어서는 정수를 안전하게 저장하고 연산할 수 있게 해 준다 |ex) const x = 2n ** 53n;<br>정수 끝에 n을 추가한다|
 | string|	문자열. 변경 불가능(immutable)하다.	| 홑따옴표 또는 쌍따옴표로 둘러싸인 문자열| ex) 'hello', "world"|
-| symbol|	유일하고 변경 불가능한 (immutable) 기본값(primitive value)| 객체 속성의 키로 사용할 수 있다	|
+| symbol|	유일하고 변경 불가능한 (immutabWle) 기본값(primitive value)| 객체 속성의 키로 사용할 수 있다	|
+
+- 객체 타입
+ + 객체 타입은 속성(Property, 프로퍼티)를 가지고 있는 데이터 컬렉션입니다. C언어의 구조체와 유사합니다 속성은 키와 값으로 표현되는데 값은 다시 자바스크립트의 타입을 가지고 있습니다. 따라서 다음 예와 같이 데이터를 구조적으로 표현할 수 있습니다.
+ + ```
+  const dexter = {
+    name: 'Dexter Han',
+    age: 21,
+    hobby: ['Movie', 'Billiards'],
+  }
+  ```
+ + 자바스크립트에는 개발할 때 유용한 내장객체들이 있습니다.
 ## License
 
 Nest is [MIT licensed](LICENSE).
