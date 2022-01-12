@@ -545,7 +545,7 @@ L29: 속성을 읽을 때 getter가 호출되면서 Hello World가 출력됩니�
 
 파라미터가 제대로 된 값으로 전달되었는지 검사하는 데코레이터를 만들어보겠습니다. 매개변수 데코레이터는 단독으로 사용하는 것보다 함수 데코레이터와 함꼐 사용할 떄 유용하게 쓰입니다.
 
-💡<b>Nest에서 API 요청 파라미터에 대해 유효성 검사를 할 떄 이와 유사한 데코레이터를 많이 사용합니다.</b>
+💡 <b>Nest에서 API 요청 파라미터에 대해 유효성 검사를 할 떄 이와 유사한 데코레이터를 많이 사용합니다.</b>
 
 ```
 import { BadRequestException } from '@nestjs/common';
@@ -587,6 +587,42 @@ t.setName('Dexter');
 console.log('----------')
 t.setName('De');
 ```
+
+L3: 파라미터의 최소값을 검사하는 파라미터 데코레이터
+
+L5~9: target 클래스(여기서는 User)의 validators 속성에 유효성을 검사하는 함수를 할당합니다.
+
+L6: args 인자는 18번 라인에서 넘겨받은 메소드의 인자입니다.
+
+L7: 유효성 검사를 위한 로직입니다. parameterindex에 위치한 인자의 길이가 최소값보다 같거나 큰지 검사합니다.
+
+L13: 함께 사용할 메소드 데코레이터
+
+L14: 메소드 데코레이터가 선언된 메소드를 method 변수에 임시 저장해둡니다.
+
+L16: 디스크립터의 value에 유효성 검사 로직이 추가된 함수를 할당합니다.
+
+L17~21: target(User 클래스)에 저장해 둔 validators를 모두 수행합니다. 이때 원래 메소드에 전달된 인자(args)를 각 validator에 전달합니다.
+
+L22: 원래의 함수를 실행합니다.
+
+L36: 파라미터 name의 길이가 5이기 때문에 문제가 없습니다.
+
+L38: 파라미터 name의 길이가 3보다 작기 때문에 BadRequestException이 발생합니다.
+
+## 데코레이터 정리
+지금까지 알아본 5가지 데코레이터를 자세히 알아보았습니다. 각 데코레이터의 특징을 간략히 정리하면 다음과 같습니다.
+
+| 데코레이터| 역할| 호출시 전달되는 인자| 선언 불가능한 위치|
+|:---|:---:|:---:|---:| 
+| 클래스 데코레이터| 클래스의 정의를 읽거나 수정| (constructor)| d.ts 파일, declare 클래스|
+| 메소드 데코레이터| 메소드의 정의를 읽거나 수정| (target, propertyKey, propertyDescriptor)| d.ts 파일, declare 클래스, 오버로드 메소드|
+| 접근자 데코레이터| 접근자의 정의를 읽거나 수정| (target, propertyKey, propertyDescriptor)| d.ts 파일, declare 클래스|
+| 속성 데코레이터| 속성의 정의를 읽거나 수정| (target, propertyKey)| d.ts 파일, declare 클래스|
+| 매개변수 데코레이터| 매개변수의 정의를 읽거나 수정| (target, propertyKey, propertyIndex)| d.ts 파일, declare 클래스|
+
+1. 선언파일: 타입스크립트 소스코드를 컴파일 할 때 생성되는 파일로 타입시스템의 타입추론을 돕는 코드가 포함되어 있다. 소스파일의 이름은 d.ts로 끝난다.
+2. Property Descriptor: 속성의 특성을 설명하는 객체이다.
 
 ## License
 Nest is [MIT licensed](LICENSE).
