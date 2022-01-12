@@ -369,7 +369,7 @@ L3: 클래스 데코레이터가 적용되는 클래스에 새로운 reportingUR
 <pre>{type: 'report', title: 'Needs dark mode', reportingURL: 'http://example.com'}</pre>
 
 BugReport클래스에 선언되어 있지 않은 새로운 속성이 추가되었습니다.
-! 클래스의 타입이 변경되는 것은 아닙니다. 타입 시스템은 reportingURL을 인식하지 못하기 때문에 bug.reportingURL과 같이 직접 사용할 수 없습니다.
+⚠️ 클래스의 타입이 변경되는 것은 아닙니다. 타입 시스템은 reportingURL을 인식하지 못하기 때문에 bug.reportingURL과 같이 직접 사용할 수 없습니다.
 
 ## 메소드 데코레이터 (Method Decorator)
 메소드 데코레이터는 메소드 바로 앞에 선언됩니다. 메소드의 속성 디스크립터에 적용되고 메소드의 정의를 읽거나 수정할 수 있습니다. 선언파일, 오버로드 메소드, 선언 클래스에는 사용할 수 없습니다.
@@ -618,8 +618,8 @@ L38: 파라미터 name의 길이가 3보다 작기 때문에 BadRequestException
 | 클래스 데코레이터| 클래스의 정의를 읽거나 수정| (constructor)| d.ts 파일, declare 클래스|
 | 메소드 데코레이터| 메소드의 정의를 읽거나 수정| (target, propertyKey, propertyDescriptor)| d.ts 파일, declare 클래스, 오버로드 메소드|
 | 접근자 데코레이터| 접근자의 정의를 읽거나 수정| (target, propertyKey, propertyDescriptor)| d.ts 파일, declare 클래스|
-| 속성 데코레이터| 속성의 정의를 읽거나 수정| (target, propertyKey)| d.ts 파일, declare 클래스|
-| 매개변수 데코레이터| 매개변수의 정의를 읽거나 수정| (target, propertyKey, propertyIndex)| d.ts 파일, declare 클래스|
+| 속성 데코레이터| 속성의 정의를 읽음| (target, propertyKey)| d.ts 파일, declare 클래스|
+| 매개변수 데코레이터| 매개변수의 정의를 읽음| (target, propertyKey, propertyIndex)| d.ts 파일, declare 클래스|
 
 1. 선언파일: 타입스크립트 소스코드를 컴파일 할 때 생성되는 파일로 타입시스템의 타입추론을 돕는 코드가 포함되어 있다. 소스파일의 이름은 d.ts로 끝난다.
 2. Property Descriptor: 속성의 특성을 설명하는 객체이다.
