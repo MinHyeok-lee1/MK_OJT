@@ -58,15 +58,15 @@
     + 최적화된 이미지(Resizing & Optimizing images 제공)
 
     + ```
-        import Image from 'next/image'
-        
-        const YourComponent = () => ( 
-            <Image 
-                src="/images/profile.jpg" // Route of the image file
-                height={144} // Desired size with correct aspect ratio           
-                width={144} // Desired size with correct aspect ratio
-                alt="Your Name"
-            />)
+      import Image from 'next/image'
+
+      const YourComponent = () => ( 
+          <Image 
+              src="/images/profile.jpg" // Route of the image file
+              height={144} // Desired size with correct aspect ratio           
+              width={144} // Desired size with correct aspect ratio
+              alt="Your Name"
+          />)
 
     + Metadata => ex) import Head from 'next/head' 이후 \<Head>Head 내용\</Head>
     
@@ -106,13 +106,13 @@
     + 수신 데이터를 데이터베이스에 저장하는 중, 타사 API와 안전하게 통신, CMS에서 미발송 내용 미리보기 상황에 API Route를 사용하는 것이 좋다.
 
     + ```
-        다음 코드를 사용하여 pages/api에 hello.js라는 파일을 만듭니다.
+      다음 코드를 사용하여 pages/api에 hello.js라는 파일을 만듭니다.
 
-        export default function handler(req, res) {
-            res.status(200).json({ text: 'Hello' })
-        }
+      export default function handler(req, res) {
+          res.status(200).json({ text: 'Hello' })
+      }
 
-        결과: http://localhost:3000/api/hello에 {"text":"Hello"} 출력.
+      결과: http://localhost:3000/api/hello에 {"text":"Hello"} 출력.
 
 - Deploying Your Next.js APP
     + Next.js 앱을 Vercel에 배포하는 방법.
