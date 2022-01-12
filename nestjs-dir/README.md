@@ -169,7 +169,7 @@
   ```
 
   <b>타입스크립트는 열거형을 제공합니다. 위 코드는 열거형으로 사용하는게 더 편합니다.</b>
-  
+
   ```
   enum Status{
     Ready,
@@ -199,6 +199,164 @@
   - 정적분석(Static Analysis). 소스 코드를 실행하지 않고 코드만을 분석하여 문제가 될 부분을 찾아내는 기법
   - 덕 타이핑(duck typing)은 객체의 변수 및 메서드의 집합이 객체의 타입을 결정하는 것
 
+
+# 데코레이터
+1. 데코레이터를 잘 사용하면 적절하게 관심사를 분리하여 관점 지향 프로그래밍을 적용한 코드를 작성할 수 있음
+2. 타입스크립트의 데코레이터는 파이썬의 데코레이터나 자바의 어노테이션과 유사한 기능을 함
+3. 클래스, 메서드, 접근자, 프로퍼티, 매개변수에 적용 가능
+4. 각 요소의 선언부 앞에 @로 시작하는 데코레이터를 선언하면 데코레이터로 구현된 코드를 함께 실행
+5. 예를 들어 다음 코드는 유저 생성 요청의 본문을 DTO로 표현한 클래스이다.
+
+```
+class CreateUserDto{
+  @IsEmail()
+  @MaxLength(60)
+  readonly email: string;
+
+  @IsString()
+  @Matches(/^[A-Za-z\d!@#$%^&*()]{8,30}$/)
+  readonly password: string;
+}
+```
+
+tsconfig.json 파일에서 experimentalDecorators 옵션을 켜야 데코레이터를 사용할 수 있음
+```
+{
+  "compilerOptions": {
+        ...
+    "experimentalDecorators": true,
+        ...
+  }
+}
+```
+
+데코레이터는 위에서 봤던 것처럼 @expression과 같은 형식으로 사용합니다.
+여기서 expression은 데코레이팅 된 선언(데코레이터가 선언되는 클래스, 메서드 등)에 대한 정보와 함께 런타임에 호출되는 <b>함수</b>여야 합니다.
+다음과 같은 데코레이터가 있고 이 데코레이터를 test라는 메서드에 선언했습니다. 여기서 deco함수에 인자들이 있는데 메서드 데코레이터로 사용하기 위해서는 이렇게 정의해야 합니다. 이후 자세히 설명하겠습니다.
+
+```
+function deco(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+  console.log('데코레이터가 평가됨');
+}
+
+class TestClass {
+  @deco
+  test() {
+    console.log('함수 호출됨')
+  }
+}
+
+const t = new TestClass();
+t.test();
+```
+
+TestClass를 생성하고 test메서드를 호출하면 다음과 같은 결과가 콘솔에 출력
+
+```
+데코레이터가 평가됨
+함수 호출됨
+```
+
+만약 데코레이터에 인자를 넘겨서 데코레이터의 동작을 변경하고 싶다면 데코레이터 팩토리, 즉 데코레이터를 리턴하는 함수를 만들면 됩니다. 위의 예시를 다음과 같이 value라는 인자를 받도록 바꿔보겠습니다.
+
+```
+function deco(value: string) {
+  console.log('데코레이터가 평가됨');
+  return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+    console.log(value);
+  }
+}
+
+class TestClass {
+  @deco('HELLO')
+  test() {
+    console.log('함수 호출됨')
+  }
+}
+```
+
+결과는 다음과 같습니다.
+
+```
+데코레이터가 평가됨
+HELLO
+함수 호출됨
+```
+
+## 데코레이터 합성
+만약 여러개의 데코레이터를 사용한다면 수학에서의 함수 합성과 같이 적용됩니다. 다음 데코레이션의 합성결과는 f(g(x))와 같음
+
+```
+@f
+@g
+test
+```
+
+여러 데코레이터를 사용할 때 다음 단계가 수행됩니다.
+1. 각 데코레이터의 표현은 위에서 아래로 평가(evaluate)됩니다.
+2. 그런 다음 결과는 아래에서 위로 함수로 호출(call)됩니다.
+
+다음 예의 출력 결과를 보면 합성순서에 대해 이해를 높일 수 있을 것입니다.
+
+```
+function first() {
+  console.log("first(): factory evaluated");
+  return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+    console.log("first(): called");
+  };
+}
+
+function second() {
+  console.log("second(): factory evaluated");
+  return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+    console.log("second(): called");
+  };
+}
+
+class ExampleClass {
+  @first()
+  @second()
+  method() {
+        console.log('method is called');
+    }
+}
+```
+
+```
+first(): factory evaluated
+second(): factory evaluated
+second(): called
+first(): called
+method is called
+```
+
+이제 타입스크립트가 지원하는 5가지 데코레이터를 알아봅시다. - (클래스, 메서드, 접근자, 속성, 매개변수 데코레이터)
+
+## 클래스 데코레이터 (Class Decorator)
+이름 그대로 클래스 데코레이터는 클래스 바로 앞에 선언됩니다 클래스 데코레이터는 클래스의 생성자에 적용되어 클래스 정의(definition)를 읽거나 수정할 수 있습니다. 선언 파일과 선언 클래스(declare class)내에서는 사용할 수 없습니다.
+
+다음코드는 클래스에 reportingURL 속성을 추가하는 클래스 데코레이터의 예입니다.
+
+```
+function reportableClassDecorator<T extends { new (...args: any[]): {} }>(constructor: T) {
+  return class extends constructor {
+    reportingURL = "http://www.example.com";
+  };
+}
+
+@reportableClassDecorator
+class BugReport {
+  type = "report";
+  title: string;
+
+  constructor(t: string) {
+    this.title = t;
+  }
+}
+
+const bug = new BugReport("Needs dark mode");
+console.log(bug);
+```
 
 ## License
 Nest is [MIT licensed](LICENSE).
