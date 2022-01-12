@@ -146,9 +146,32 @@
     type MyUser = User;
   + MyUser 타입은 기존 User 타입을 그대로 사용하지만 내가 사용하는 도메인에 맞는 이름으로 바꾼 것입니다.
 
-## 타입 정의하기
+## 타입 구성하기
+  + 자바스크립트는 변수에 어떠한 타입의 값도 할당할 수 있습니다. 일명 덕 타이핑이라 부릅니다. 타입스크립트도 여러 타입의 값을 할당할 수 있습니다. 여러 타입을 조합한 새로운 타입을 가지는 것입니다.
 
+  ### 유니언 (Union) 타입
+  유니언 타입이 위에서 설명했던 여러 타입을 조합한 타입입니다. 다음코드에서 getLength 함수의 인자로 받은 obj 객체는 string 또는 string 배열 타입을 가질 수 있습니다.
 
+  ```
+  function getLength(obj: string | string[]){
+    return obj.length;
+  }
+  ```
+  유니언 타입을 활용하면 변수가 가질 수 있는 값을 제한할 수도 있습니다.
+  
+  ```
+  type Status = "Ready" | "Waiting";
+  ```
+  <b>타입스크립트는 열거형을 제공합니다. 위 코드는 엵형으로 사용하는게 더 편합니다.</b>
+
+  ```
+  enum Status{
+    Ready,
+    Waiting,
+  }
+  ```
+
+  ### 제네릭 (Generic) 타입
 ## License
 
 Nest is [MIT licensed](LICENSE).
