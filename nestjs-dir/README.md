@@ -75,6 +75,23 @@
       * JSON: JSON(JavaScript Object Notation)은 자바스크립트에서 파생된 경량 데이터 교환 형식이지만 많은 프로그래밍 언어에서 사용됩니다. JSON은 범용 데이터 구조를 구축합니다.
       * 이 외 표준 라이브러리에는 더 많은 내장 객체가 있습니다. [MDN 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects)를 참고하세요.
 
+- 함수(Fuction) 타입
+  + 자바스크립트는 함수를 변수에 할당하거나 다른 함수의 인자로 전달할 수 있습니다. 함수의 결과로 반환할 수도 있습니다. 언어의 이러한 특징을 <b>일급 함수</b>라고 합니다. 함수 func의 타입을 검사하면 "function"이 됩니다.
+
+  + ```
+      typeof func === "function"
+
+- any / unknown / never
+  + 타입스크립트의 특수한 타입 any와 unknown, never이 있다.
+  + any: js 와 같이 어떤 타입의 변수에도 할당이 가능하다. 이 특성때문에 런타임에 오류를 일으킬 가능성이 있습니다.
+  + unknown: any 타입과 마찬가지로 어떤 타입도 할당 가능하지만 다른 변수에 할당 또는 사용할 때 타입을 강제하도록 하여 any가 일으키는 오류를 줄여줍니다.
+  + never: never 타입의 변수에는 어떤 값도 할당할 수 없습니다. 함수의 리턴 타입으로 지정하면 함수가 어떤 값도 반환하지 않는다는 것을 뜻합니다.
+  + 다음과 같이 특정 타입의 값을 할당받지 못하도록 하는데 사용할 수도 있습니다. <T>는 제네릭 타입인데 이후에 설명합니다.
+  + ```
+      type NonString<T> = T extends string ? never : T;
+
+- 타입 정의하기
+      
 ## License
 
 Nest is [MIT licensed](LICENSE).
