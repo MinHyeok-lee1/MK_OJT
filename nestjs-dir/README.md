@@ -87,8 +87,6 @@
 
   + ```
     typeof func === "function"
-
-
 ## any / unknown / never
   + 타입스크립트의 특수한 타입 any와 unknown, never이 있다.
 
@@ -102,7 +100,8 @@
 
   + ```
     type NonString<T> = T extends string ? never : T;
-
+    ```
+    
 ## 타입 정의하기
   + 타입 스크립트는 타입을 정의해서 사용할 수 있습니다. 기본타입과 같은 타입을 정의한다는 뜻은 아니고, 위에서 설명한 타입들을 조합하여 타입에 이름을 붙여 사용합니다. 다음 코드를 vscode에 입력하고 마우스를 user 변수 위로 가져가 보세요.
 
