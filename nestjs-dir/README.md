@@ -369,6 +369,7 @@ L3: 클래스 데코레이터가 적용되는 클래스에 새로운 reportingUR
 <pre>{type: 'report', title: 'Needs dark mode', reportingURL: 'http://example.com'}</pre>
 
 BugReport클래스에 선언되어 있지 않은 새로운 속성이 추가되었습니다.
+
 ⚠️ 클래스의 타입이 변경되는 것은 아닙니다. 타입 시스템은 reportingURL을 인식하지 못하기 때문에 bug.reportingURL과 같이 직접 사용할 수 없습니다.
 
 ## 메소드 데코레이터 (Method Decorator)
