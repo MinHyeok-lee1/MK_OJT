@@ -351,7 +351,7 @@
               )
           }
         + Next.js 스크립트 구성 요소를 사용하면 next/head다음 을 사용할 필요 없이 구성 요소의 아무 곳에나 추가할 수 있습니다
-        
+
         + ``` 
           import Script from 'next/script'
 
@@ -368,7 +368,7 @@
         + 스크립트 구성 요소는 strategy최적의 로드를 위해 스크립트를 가져와 실행할 시기를 결정할 수 있는 속성을 도입했습니다. LCP(Large Contentful Paint)에 부정적인 영향을 미치지 않으려면 대부분의 타사 스크립트는 페이지의 모든 콘텐츠 로드가 완료된 후, 즉 페이지가 대화형이 된 직후( strategy="afterInteractive") 또는 브라우저 유휴 시간( strategy="lazyOnload") 동안 느리게 로드되도록 연기해야 ​​합니다.
 
 - Monitoring your Core Web Vitals
-    + Next.js Analytics [Nex.js 분석](https://nextjs.org/analytics)
+    + Next.js Analytics [Next.js 분석](https://nextjs.org/analytics)
 
     + Custom Reporting
         + ```
@@ -449,16 +449,16 @@
 
           export default App
     +  blog앱의TypeScript로 변환
-            + <b>components/date.js</b>: Update to <b>date.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/components/date.tsx)
+        - <b>components/date.js</b>: Update to <b>date.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/components/date.tsx)
 
-            + <b>components/layout.js</b>: Update to <b>layout.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/components/layout.tsx)
+        - <b>components/layout.js</b>: Update to <b>layout.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/components/layout.tsx)
 
-            + <b>lib/posts.js</b>: Update to <b>posts.ts</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/lib/posts.ts)
+        + <b>lib/posts.js</b>: Update to <b>posts.ts</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/lib/posts.ts)
 
-            + <b>pages/posts/\[id].js</b>: Update to <b>\[id].tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/pages/posts/%5Bid%5D.tsx)
+        + <b>pages/posts/\[id].js</b>: Update to <b>\[id].tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/pages/posts/%5Bid%5D.tsx)
 
-            + <b>pages/index.js</b>: Update to <b>index.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/pages/index.tsx)
+        + <b>pages/index.js</b>: Update to <b>index.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/pages/index.tsx)
 
-            + <b>pages/_app.js</b>: Update to <b>_app.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/pages/_app.tsx)
-
-            + <b>pages/api/hello.js</b>: Update to <b>hello.ts</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/pages/api/hello.ts)
+        + <b>pages/_app.js</b>: Update to <b>_app.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/pages/_app.tsx)
+        
+        + <b>pages/api/hello.js</b>: Update to <b>hello.ts</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/pages/api/hello.ts)
