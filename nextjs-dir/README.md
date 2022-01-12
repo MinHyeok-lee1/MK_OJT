@@ -67,7 +67,7 @@
               width={144} // Desired size with correct aspect ratio
               alt="Your Name"
           />)
-
+          
     + Metadata => ex) import Head from 'next/head' 이후 \<Head>Head 내용\</Head>
     
     + 스타일의 적용, Thrid-Party JavaScript, jsx, Layout Component, Global Styles, Sass
@@ -113,7 +113,6 @@
       }
 
       결과: http://localhost:3000/api/hello에 {"text":"Hello"} 출력.
-
 - Deploying Your Next.js APP
     + Next.js 앱을 Vercel에 배포하는 방법.
     
@@ -184,29 +183,29 @@
         + 몇 가지 간단한 URL과 이를 Next.js 라우터에 추가하는 방법을 살펴보겠습니다.
 
         + ``` 
-            홈페이지 : https://www.example.com → pages/index.js
+          홈페이지 : https://www.example.com → pages/index.js
 
-            목록 : https://www.example.com/products → 또는 pages/products.jspages/products/index.js
+          목록 : https://www.example.com/products → 또는 pages/products.jspages/products/index.js
 
-            세부 사항 : → https://www.example.com/products/product pages/products/product.js 
+          세부 사항 : → https://www.example.com/products/product pages/products/product.js 
         + 블로그 또는 전자 상거래 사이트의 경우 제품 ID 또는 블로그 이름을 URL의 슬러그로 사용하고 싶을 것입니다. 이것을 동적 라우팅 이라고 합니다 .
 
         + ```
-            제품: https://www.example.com/products/nextjs-shirt → pages/products/[product].js
+          제품: https://www.example.com/products/nextjs-shirt → pages/products/[product].js
 
-            블로그: https://www.example.com/blog/seo-in-nextjs → pages/blog/[blog-name].js
+          블로그: https://www.example.com/blog/seo-in-nextjs → pages/blog/[blog-name].js
         + 동적 라우팅을 사용하려면 products또는 blogs하위 폴더 내의 페이지 이름에 대괄호를 추가할 수 있습니다 .
 
         + SEO에서 제목 태그(title)이 중요하다. 다음은 제목태그의 예시이다.
         
         + ```
-            <title>iPhone 12 XS Max For Sale in Colorado - Big Discounts | Apple</title>
+          <title>iPhone 12 XS Max For Sale in Colorado - Big Discounts | Apple</title>
         + SEO에서 설명 메타 태그는 또다른 중요한 SEO 요소이지만 제목보다 덜 중요하다, Google에 따르면 이 요소는 순위 지정 목적으로 고려되지 않지만 검색 결과의 클릭률에 영향을 줄 수 있습니다.
 
         + 설명 메타 태그를 사용하여 제목의 정보를 보완하세요. 제목에 맞지 않는 키워드가 있는 경우 여기에 콘텐츠에 대한 더 많은 키워드를 입력하세요. 이러한 키워드는 사용자의 검색에 포함된 경우 굵게 표시됩니다. 다음은 HTML의 설명 메타태그 예:
         
         + ```
-            <title>iPhone 12 XS Max For Sale in Colorado - Big Discounts | Apple</title>
+          <title>iPhone 12 XS Max For Sale in Colorado - Big Discounts | Apple</title>
         + 그 이외에 원래 페이스북이 개발한 Open Graph Protocol은 주어진 웹 페이지에서 메타데이터가 사용되는 방식을 표준화한다. 원하는 만큼 정보를 적게 또는 많이 제공할 수 있지만 열려 있는 모든 그래프 조각이 서로 들어맞아 연결된 사이트의 표현
 
         + 구조화된 데이터 및 JSON-LD: 구조화된 데이터는 검색 엔진이 귀하의 페이지를 쉽게 이해할 수 있도록 합니다. 수년에 걸쳐 여러 어휘가 있었지만 현재 주요 어휘는 schema.org 입니다. 다른 검색 엔진은 schema.org 내에서 다른 어휘를 적용할 수 있으며 어떤 검색 엔진도 웹사이트의 어휘에 설명된 모든 사용 사례를 다루지 않습니다. 각 경우에 어떤 어휘가 허용되는지 확인
@@ -252,68 +251,68 @@
     
     + Image Component and Automatic Image Optimization(img => Image)
         + ```
-            import Image from 'next/image'
+          import Image from 'next/image'
 
-            // Before
-            <img src="large-image.jpg" alt="Large Image" />
+          // Before
+          <img src="large-image.jpg" alt="Large Image" />
 
-            // After
-            <Image src="/large-image.jpg" alt="Large Image" width={3048} height={2024} />
+          // After
+          <Image src="/large-image.jpg" alt="Large Image" width={3048} height={2024} />
         
     + Dynamic Imports: 동적 가져오기를 사용하면 페이지 로드 시 "사용하지 않는 JavaScript 제거" 문제가 해결됩니다. 이는 또한 TTI(Time to Interactive)를 개선하여 FID(First Input Delay)를 개선하는 데 도움이 됩니다.
         + ```
-            import Fuse from 'fuse.js'
-            import _ from 'lodash'
+          import Fuse from 'fuse.js'
+          import _ from 'lodash'
 
-            <input
-            type="text"
-            placeholder="Country search..."
-            className={styles.input}
-            onChange={async e => {
-                const { value } = e.currentTarget
-                // Dynamically load libraries
-                const Fuse = (await import('fuse.js')).default
-                const _ = (await import('lodash')).default
+          <input
+          type="text"
+          placeholder="Country search..."
+          className={styles.input}
+          onChange={async e => {
+              const { value } = e.currentTarget
+              // Dynamically load libraries
+              const Fuse = (await import('fuse.js')).default
+              const _ = (await import('lodash')).default
 
-                const fuse = new Fuse(countries, {
-                keys: ['name'],
-                threshold: 0.3
-                })
+              const fuse = new Fuse(countries, {
+              keys: ['name'],
+              threshold: 0.3
+              })
 
-                const searchResult = fuse.search(value).map(result => result.item)
+              const searchResult = fuse.search(value).map(result => result.item)
 
-                const updatedResults = searchResult.length ? searchResult : countries
-                setResults(updatedResults)
+              const updatedResults = searchResult.length ? searchResult : countries
+              setResults(updatedResults)
 
-                // Fake analytics hit
-                console.info({
-                searchedAt: _.now()
-                })
-            }}
-            />
+              // Fake analytics hit
+              console.info({
+              searchedAt: _.now()
+              })
+          }}
+          />
 
     + Dynamic Imports for Components
         + ```
-            import dynamic from 'next/dynamic'
+          import dynamic from 'next/dynamic'
 
-            // remove
-            import CodeSampleModal from '../components/CodeSampleModal'
+          // remove
+          import CodeSampleModal from '../components/CodeSampleModal'
 
-            //add 
-            const CodeSampleModal = dynamic(() => import('../components/CodeSampleModal'), {
-                ssr: false
-            })
+          //add 
+          const CodeSampleModal = dynamic(() => import('../components/CodeSampleModal'), {
+              ssr: false
+          })
 
-            // Wrapping CodeSampleModal
-            {
-                isModalOpen && (
-                    <CodeSampleModal
-                    isOpen={isModalOpen}
-                    closeModal={() => setIsModalOpen(false)}
-                    />
-                )
-            
-            }
+          // Wrapping CodeSampleModal
+          {
+              isModalOpen && (
+                  <CodeSampleModal
+                  isOpen={isModalOpen}
+                  closeModal={() => setIsModalOpen(false)}
+                  />
+              )
+        
+          }
         + 두 가지 최적화 제안이 남음
         + HTTP2 사용 : 이 문제를 해결하기 위해 HTTP2를 지원하는 곳(예: Vercel )에 배포할 수 있음
         + 이미지 요소에는 명시적 width 및 height : 이것은 실제로 등대 의 버그이며 사이트 성능에 영향을 미치지 않음
@@ -325,15 +324,15 @@
 
         + 최적화하기 전에 추가 네트워크 요청이 필요합니다.
         + ```
-            // Before optimizing
-            <link href="https://fonts.googleapis.com/css2?family=Inter" rel="stylesheet" />
+          // Before optimizing
+          <link href="https://fonts.googleapis.com/css2?family=Inter" rel="stylesheet" />
 
         + 최적화 후 Next.js는 글꼴 CSS를 인라인합니다.
         + ```
-            // After optimizing
-            <style data-href="https://fonts.googleapis.com/css2?family=Inter">
-                    @font-face{font-family:'Inter';font-style:normal.....
-            </style>
+          // After optimizing
+          <style data-href="https://fonts.googleapis.com/css2?family=Inter">
+                  @font-face{font-family:'Inter';font-style:normal.....
+          </style>
     
     + Optimizing Third-Party Scripts
         + 많은 애플리케이션은 분석, 광고 및 고객 지원 위젯과 같은 다양한 유형의 기능을 포함하기 위해 타사 JavaScript에 의존합니다. 그러나 타사 제작 코드를 포함하면 페이지 콘텐츠가 너무 일찍 로드될 경우 렌더링이 지연되고 사용자 성능에 영향을 줄 수 있습니다.
@@ -342,31 +341,31 @@
 
         + 스크립트 구성 요소 사용: 일반 HTML을 사용하면 외부 스크립트를 다음에 수동으로 추가해야 합니다 . next/head
         + ```
-            import Head from 'next/head'
+          import Head from 'next/head'
 
-            function IndexPage() {
-                return (
-                    <div>
-                        <Head>
-                            <script src="https://www.googletagmanager.com/gtag/js?id=123" />
-                        </Head>
-                    </div>
-                )
-            }
+          function IndexPage() {
+              return (
+                  <div>
+                      <Head>
+                          <script src="https://www.googletagmanager.com/gtag/js?id=123" />
+                      </Head>
+                  </div>
+              )
+          }
         + Next.js 스크립트 구성 요소를 사용하면 next/head다음 을 사용할 필요 없이 구성 요소의 아무 곳에나 추가할 수 있습니다
         + ``` 
-            import Script from 'next/script'
+          import Script from 'next/script'
 
-            function IndexPage() {
-                return (
-                    <div>
-                        <Script
-                            strategy="afterInteractive"
-                            src="https://www.googletagmanager.com/gtag/js?id=123"
-                        />
-                    </div>
-                )
-            }
+          function IndexPage() {
+              return (
+                  <div>
+                      <Script
+                          strategy="afterInteractive"
+                          src="https://www.googletagmanager.com/gtag/js?id=123"
+                      />
+                  </div>
+              )
+          }
         + 스크립트 구성 요소는 strategy최적의 로드를 위해 스크립트를 가져와 실행할 시기를 결정할 수 있는 속성을 도입했습니다. LCP(Large Contentful Paint)에 부정적인 영향을 미치지 않으려면 대부분의 타사 스크립트는 페이지의 모든 콘텐츠 로드가 완료된 후, 즉 페이지가 대화형이 된 직후( strategy="afterInteractive") 또는 브라우저 유휴 시간( strategy="lazyOnload") 동안 느리게 로드되도록 연기해야 ​​합니다.
 
 - Monitoring your Core Web Vitals
@@ -374,15 +373,15 @@
 
     + Custom Reporting
         + ```
-            npx create-next-app nextjs-lighthouse --use-npm --example "https://github.com/vercel/next-learn/tree/master/seo"
+          npx create-next-app nextjs-lighthouse --use-npm --example "https://github.com/vercel/next-learn/tree/master/seo"
         + pages/_app.js다음 함수를 열고 내보냅니다.
         + ```
-            export function reportWebVitals(metric) {
-                console.log(metric)
-            }
+          export function reportWebVitals(metric) {
+            console.log(metric)
+          }
         + 그런 다음 애플리케이션을 빌드하고 시작합니다.
         + ```
-            npm run build && npm run start
+          npm run build && npm run start
         + Chrome을 열면 DevTools 콘솔 내부에 메트릭이 표시됩니다. 또한 FID 는 페이지와 상호 작용할 때만 트리거됩니다.
 
     + Data Studio (Chrome User Experience Report) [데이터 스튜디오(Chrome 사용자 경험 보고서)](https://developers.google.com/web/tools/chrome-user-experience-report)
@@ -411,49 +410,45 @@
     + 이제 개발 서버(npm run dev 또는 yarn dev)를 시작/재시작 이후, 다음과 같은 경고가 표시, TypeScript를 사용하려고 하지만 필수 패키지가 설치되지 않음, 다음 지침에 따라 TypeScript를 설치.
 
     + ```
-        # If you’re using npm
-        <b>npm install --save-dev typescript @types/react @types/node</b>
+      # If you’re using npm
+      <b>npm install --save-dev typescript @types/react @types/node</b>
 
-        # If you’re using Yarn
-        <b>yarn add --dev typescript @types/react @types/node</b>
-
+      # If you’re using Yarn
+      <b>yarn add --dev typescript @types/react @types/node</b>
     + tsconfig.json는 사용자가 지정하는 파일이고 Next.env.d.ts는 TypeScript 컴파일러가 Next.js 유형을 선택하는 것이므로 해당 파일을 touch하면 안된다.
     
 - Next.js앱에 TypeScript로 변환하는 방법_Next.js Specific Types
     + 정적 생성 및 서버 측 렌더링 getStaticProps, getStaticPath 및 getServerSideProps의 경우 각각 GetStaticProps, GetStaticPaths 및 GetServerSideProps 유형을 사용할 수 있습니다.
         + ```
-            import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next'
+          import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next'
 
-            export const getStaticProps: GetStaticProps = async context => {
-            // ...
-            }
+          export const getStaticProps: GetStaticProps = async context => {
+          // ...
+          }
 
-            export const getStaticPaths: GetStaticPaths = async () => {
-            // ...
-            }
+          export const getStaticPaths: GetStaticPaths = async () => {
+          // ...
+          }
 
-            export const getServerSideProps: GetServerSideProps = async context => {
-            // ...
-            }
-
+          export const getServerSideProps: GetServerSideProps = async context => {
+          // ...
+          }
     + API 경로에 기본 제공 유형을 사용하는 방법<br>
         + ```
-            import { NextApiRequest, NextApiResponse } from 'next'
+          import { NextApiRequest, NextApiResponse } from 'next'
 
-            export default (req: NextApiRequest, res: NextApiResponse) => {
-            // ...
-            }
-    
+          export default (req: NextApiRequest, res: NextApiResponse) => {
+          // ...
+          }
     + 사용자 지정 앱: 다음과 같이 pages/_app.js를 pages/_app.tsx로 변환하고 기본 제공 AppProps 유형을 사용가능
         + ```
-            import { AppProps } from 'next/app'
+          import { AppProps } from 'next/app'
 
-            function App({ Component, pageProps }: AppProps) {
-            return <Component {...pageProps} />
-            }
+          function App({ Component, pageProps }: AppProps) {
+          return <Component {...pageProps} />
+          }
 
-            export default App
-
+          export default App
     +  blog앱의TypeScript로 변환
             + <b>components/date.js</b>: Update to <b>date.tsx</b> using [this code](https://github.com/vercel/next-learn/blob/master/basics/typescript-final/components/date.tsx)
 
