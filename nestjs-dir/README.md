@@ -69,11 +69,11 @@
   + 객체 타입은 속성(Property, 프로퍼티)를 가지고 있는 데이터 컬렉션입니다. C언어의 구조체와 유사합니다 속성은 키와 값으로 표현되는데 값은 다시 자바스크립트의 타입을 가지고 있습니다. 따라서 다음 예와 같이 데이터를 구조적으로 표현할 수 있습니다.
   
   + ```
-        const dexter = {
-          name: 'Dexter Han',
-          age: 21,
-          hobby: ['Movie', 'Billiards'],
-        }
+    const dexter = {
+      name: 'Dexter Han',
+      age: 21,
+      hobby: ['Movie', 'Billiards'],
+    }
   + 자바스크립트에는 개발할 때 유용한 내장객체들이 있습니다.
       * Date: 1970년 1월 1일 UTC 자정과의 시간 차이를 밀리초 단위로 나타낸 것으로 시간을 다룰 때 사용합니다.
       * 배열(Array): 정수를 키로 가지는 일련의 값을 가진 객체입니다. 코드로 표현할 때는 다른 언어에서와 같이 대괄호([])로 표현합니다.
@@ -86,7 +86,7 @@
   + 자바스크립트는 함수를 변수에 할당하거나 다른 함수의 인자로 전달할 수 있습니다. 함수의 결과로 반환할 수도 있습니다. 언어의 이러한 특징을 <b>일급 함수</b>라고 합니다. 함수 func의 타입을 검사하면 "function"이 됩니다.
 
   + ```
-      typeof func === "function"
+    typeof func === "function"
 
 
 ## any / unknown / never
@@ -101,43 +101,43 @@
   + 다음과 같이 특정 타입의 값을 할당받지 못하도록 하는데 사용할 수도 있습니다. <T>는 제네릭 타입인데 이후에 설명합니다.
 
   + ```
-      type NonString<T> = T extends string ? never : T;
+    type NonString<T> = T extends string ? never : T;
 
 ## 타입 정의하기
   + 타입 스크립트는 타입을 정의해서 사용할 수 있습니다. 기본타입과 같은 타입을 정의한다는 뜻은 아니고, 위에서 설명한 타입들을 조합하여 타입에 이름을 붙여 사용합니다. 다음 코드를 vscode에 입력하고 마우스를 user 변수 위로 가져가 보세요.
 
   + ```
-      const user = {
-        name: 'Dexter',
-        age: 21,
-      }
+    const user = {
+      name: 'Dexter',
+      age: 21,
+    }
   + 추론된 타입이 다음과 같이 표시됩니다.
   
   + ```
-      const user: {
-        name: string;
-        age: number;
-      }
+    const user: {
+      name: string;
+      age: number;
+    }
   + 변수에 객체를 바로 할당하지 않고 interface로 정의할 수 있습니다.
 
   + ```
-      interface User{
-        name: string;
-        age: number;
-      }
-      
-      const user: User = {
-        name: 'Dexter',
-        age: 21,
-      }
+    interface User{
+      name: string;
+      age: number;
+    }
+    
+    const user: User = {
+      name: 'Dexter',
+      age: 21,
+    }
   + interface는 class로 선언할 수도 있습니다.
 
   + ```
-      class User{
-        constructor(name: string, age: number){ }
-      }
+    class User{
+      constructor(name: string, age: number){ }
+    }
 
-      const user: User = new User('Dexter', 21);
+    const user: User = new User('Dexter', 21);
   + <b>생성자에 선언된 변수는 클래스 멤버변수가 됩니다. 접근제한자(public, private)가 없으면 public 변수가 됩니다. 멤버변수를 사용할 떄는 this.name과 같이 this 키워드와 함께 사용합니다.</b>
 
   + 또 타입은 type 키워드로 새로운 타입을 만들 수 있습니다.
