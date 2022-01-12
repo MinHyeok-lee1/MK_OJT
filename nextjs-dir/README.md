@@ -252,68 +252,68 @@
     
     + Image Component and Automatic Image Optimization(img => Image)
         + ```
-                import Image from 'next/image'
+            import Image from 'next/image'
 
-                // Before
-                <img src="large-image.jpg" alt="Large Image" />
+            // Before
+            <img src="large-image.jpg" alt="Large Image" />
 
-                // After
-                <Image src="/large-image.jpg" alt="Large Image" width={3048} height={2024} />
+            // After
+            <Image src="/large-image.jpg" alt="Large Image" width={3048} height={2024} />
         
     + Dynamic Imports: 동적 가져오기를 사용하면 페이지 로드 시 "사용하지 않는 JavaScript 제거" 문제가 해결됩니다. 이는 또한 TTI(Time to Interactive)를 개선하여 FID(First Input Delay)를 개선하는 데 도움이 됩니다.
         + ```
-                import Fuse from 'fuse.js'
-                import _ from 'lodash'
+            import Fuse from 'fuse.js'
+            import _ from 'lodash'
 
-                <input
-                type="text"
-                placeholder="Country search..."
-                className={styles.input}
-                onChange={async e => {
-                    const { value } = e.currentTarget
-                    // Dynamically load libraries
-                    const Fuse = (await import('fuse.js')).default
-                    const _ = (await import('lodash')).default
+            <input
+            type="text"
+            placeholder="Country search..."
+            className={styles.input}
+            onChange={async e => {
+                const { value } = e.currentTarget
+                // Dynamically load libraries
+                const Fuse = (await import('fuse.js')).default
+                const _ = (await import('lodash')).default
 
-                    const fuse = new Fuse(countries, {
-                    keys: ['name'],
-                    threshold: 0.3
-                    })
+                const fuse = new Fuse(countries, {
+                keys: ['name'],
+                threshold: 0.3
+                })
 
-                    const searchResult = fuse.search(value).map(result => result.item)
+                const searchResult = fuse.search(value).map(result => result.item)
 
-                    const updatedResults = searchResult.length ? searchResult : countries
-                    setResults(updatedResults)
+                const updatedResults = searchResult.length ? searchResult : countries
+                setResults(updatedResults)
 
-                    // Fake analytics hit
-                    console.info({
-                    searchedAt: _.now()
-                    })
-                }}
-                />
+                // Fake analytics hit
+                console.info({
+                searchedAt: _.now()
+                })
+            }}
+            />
 
     + Dynamic Imports for Components
         + ```
-                import dynamic from 'next/dynamic'
+            import dynamic from 'next/dynamic'
 
-                // remove
-                import CodeSampleModal from '../components/CodeSampleModal'
+            // remove
+            import CodeSampleModal from '../components/CodeSampleModal'
 
-                //add 
-                const CodeSampleModal = dynamic(() => import('../components/CodeSampleModal'), {
-                    ssr: false
-                })
+            //add 
+            const CodeSampleModal = dynamic(() => import('../components/CodeSampleModal'), {
+                ssr: false
+            })
 
-                // Wrapping CodeSampleModal
-                {
-                    isModalOpen && (
-                        <CodeSampleModal
-                        isOpen={isModalOpen}
-                        closeModal={() => setIsModalOpen(false)}
-                        />
-                    )
-                
-                }
+            // Wrapping CodeSampleModal
+            {
+                isModalOpen && (
+                    <CodeSampleModal
+                    isOpen={isModalOpen}
+                    closeModal={() => setIsModalOpen(false)}
+                    />
+                )
+            
+            }
         + 두 가지 최적화 제안이 남음
         + HTTP2 사용 : 이 문제를 해결하기 위해 HTTP2를 지원하는 곳(예: Vercel )에 배포할 수 있음
         + 이미지 요소에는 명시적 width 및 height : 이것은 실제로 등대 의 버그이며 사이트 성능에 영향을 미치지 않음
