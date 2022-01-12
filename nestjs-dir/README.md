@@ -536,7 +536,57 @@ L23: 데코레이터에 formatString을 전달합니다.
 
 L29: 속성을 읽을 때 getter가 호출되면서 Hello World가 출력됩니다.
 
-## 
+## 매개변수 데코레이터 (Parameter Decorator)
+예상하셨듯이 생성자 또는 메소드의 파라미터에 선언되어 적용됩니다. 역시 선언 파일, 선언 클래스에서 사용할 수 없습니다. 매개변수 데코레이터는 호출 될 때 3가지의 인자와 함께 호출됩니다. 반환값은 무시됩니다.
+
+1. 정적 멤버가 속한 클래스의 생성자 함수이거나 인스턴스 멤버에 대한 클래스의 프로토타입
+2. 멤버의 이름
+3. 매개변수가 함수에서 몇 번쨰 위치에 선언되었는 지를 나타내는 인덱스
+
+파라미터가 제대로 된 값으로 전달되었는지 검사하는 데코레이터를 만들어보겠습니다. 매개변수 데코레이터는 단독으로 사용하는 것보다 함수 데코레이터와 함꼐 사용할 떄 유용하게 쓰입니다.
+
+💡<b>Nest에서 API 요청 파라미터에 대해 유효성 검사를 할 떄 이와 유사한 데코레이터를 많이 사용합니다.</b>
+
+```
+import { BadRequestException } from '@nestjs/common';
+
+function MinLength(min: number) {
+  return function (target: any, propertyKey: string, parameterIndex: number) {
+    target.validators = {
+      minLength: function (args: string[]) {
+        return args[parameterIndex].length >= min;
+      }
+    }
+  }
+}
+
+function Validate(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+  const method = descriptor.value;
+
+  descriptor.value = function(...args) {
+    Object.keys(target.validators).forEach(key => {
+      if (!target.validators[key](args)) {
+        throw new BadRequestException();
+      }
+    })
+    method.apply(this, args);
+  }
+}
+
+class User {
+  private name: string;
+
+  @Validate
+  setName(@MinLength(3) name: string) {
+    this.name = name;
+  }
+}
+
+const t = new User();
+t.setName('Dexter');
+console.log('----------')
+t.setName('De');
+```
 
 ## License
 Nest is [MIT licensed](LICENSE).
