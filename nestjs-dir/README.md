@@ -371,9 +371,8 @@ L3: 클래스 데코레이터가 적용되는 클래스에 새로운 reportingUR
 BugReport클래스에 선언되어 있지 않은 새로운 속성이 추가되었습니다.
 ! 클래스의 타입이 변경되는 것은 아닙니다. 타입 시스템은 reportingURL을 인식하지 못하기 때문에 bug.reportingURL과 같이 직접 사용할 수 없습니다.
 
-## 메소드 데코레이트 (Method Decorator)
+## 메소드 데코레이터 (Method Decorator)
 메소드 데코레이터는 메소드 바로 앞에 선언됩니다. 메소드의 속성 디스크립터에 적용되고 메소드의 정의를 읽거나 수정할 수 있습니다. 선언파일, 오버로드 메소드, 선언 클래스에는 사용할 수 없습니다.
-
 
 앞서 deco 메소드 데코레이터에서 보았던 것처럼 메소드 데코레이터는 다음 세개의 인수를 가집니다.
 1. 정적 멤버가 속한 클래스의 생성자 함수이거나 인스턴스 멤버에 대한 클래스의 프로토타입
@@ -382,8 +381,162 @@ BugReport클래스에 선언되어 있지 않은 새로운 속성이 추가되�
 
 만약 메소드 데코레이터가 값을 반환한다면 이는 해당 메소드의 속성 디스크립터가 됩니다.
 
-
 메소드 데코레이터의 예를 보겠습니다. 함수를 실행하는 과정에서 에러가 발생했을 때 이 에러를 잡아서 처리하는 로직을 구현하고 있습니다.
+
+```
+function HandleError() {
+  return function(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+    console.log(target)
+    console.log(propertyKey)
+    console.log(descriptor)
+
+    const method = descriptor.value;
+
+    descriptor.value = function() {
+      try {
+        method();
+      } catch (e) {
+        // 에러 핸들링 로직 구현
+        console.log(e);
+      }
+    }
+  };
+}
+
+class Greeter {
+  @HandleError()
+  hello() {
+    throw new Error('테스트 에러');
+  }
+}
+
+const t = new Greeter();
+t.hello();
+```
+
+L2: 메소드 데코레이터가 가져야 하는 3개의 인자입니다. PropertyDescriptor는 객체 속성의 특성을 기술하고 있는 객체로써 enumerable 외에도 여러가지 속성을 가지고 있습니다. enumerable이 true가 되면 이 속성은 열거형이라는 뜻이 됩니다.
+
+```
+interface PropertyDescriptor{
+  configurable?: boolean; // 속성의 정의를 수정할 수 있는지 여부
+  enumerable?: boolean; // 열거형인지 여부
+  value?: any; // 속성 값
+  writable?: boolean; // 수정 가능 여부
+  get?(): any; // getter
+  set?(v: any): void; // setter
+}
+```
+
+L3: 출력결과는 {constructor: f, greet: f} 입니다. 데코레이터가 선언된 메소드 greet가 속해있는 클래스의 생성자와 프로토타입을 가지는 객체임을 알 수 있습니다.
+
+L4: 함수이름 hello가 출력됩니다.
+
+L5: hello 함수가 처음 가지고 있던 디스크립터가 출력됩니다. 출력결과는 {value: f, writable: true, enumerable: false, configurable: true} 입니다.
+
+L7: 디스크립터의 value 속성으로 원래 정의된 메소드를 저장합니다.
+
+L10: 원래의 메소드를 호출합니다.
+
+L12: 만약 원래의 메소드를 수행하는 과정에서 발생한 에러를 핸들링하는 로직을 이 곳에 구현합니다.
+
+L13: Error: 테스트 에러가 출력됩니다.
+
+
+
+## 접근자 데코레이터 (Accessor Decorator)
+접근자 데코레이터는 접근자(주석, 객체 프로퍼티를 객체 외에서 읽고 쓸 수 있는 함수, 쉽게 이야기해서 getter와 setter, 타입스크립트에는 getter와 setter를 구현할 수 있는 get, set 키워드가 있다.) 바로 앞에 선언합니다. 접근자의 속성 디스크립터에 적용되고 접근자의 정의를 읽거나 수정할 수 있습니다. 역시 선언 파일과 선언 클래스에 사용할 수 없습니다. 접근자 데코레이터가 반환하는 값은 해당 멤버의 속성 디스크립터가 됩니다.
+
+특정 멤버를 열거가 가능한 지 결정하는 데코레이터의 예를 보겠습니다.
+
+```
+function Enumerable(enumerable: boolean){
+  return function(target: any, propertyKey: string, descriptor: PropertyDescriptor){
+    descriptor.enumerable = enumerable;
+  }
+}
+
+class Person{
+  constructor(private name: string){}
+
+  @Enumerable(true)
+  get getName(){
+    return this.name;
+  }
+
+  @Enumerable(false)
+  set setName(name: string){
+    this.name = name;
+  }
+}
+  const person = new Person('Dexter');
+  for(let key in person){
+    console.log(`${key}: ${person[key]}`);
+  }
+```
+
+L3: 디스크립터의 enumerable 속성을 데코레이터의 인자로 결정합니다.
+
+L8: name은 외부에서 접근하지 못하는 private 멤버입니다.
+
+L10~11: getter의 getName 함수는 열거가 가능하도록 합니다.
+
+L15~16: setter의 setName 함수는 열거가 불가능하도록 합니다.
+
+L21~24: 결과를 출력하면 getName은 출력되지만 setName은 열거하지 못하게 되었기 때문에 for문에서 key로 받을 수가 없습니다.
+
+```
+name: Dexter
+getName: Dexter
+```
+
+
+## 속성 데코레이터 (Property Decorator)
+속성 데코레이터는 클래스의 속성 바로 앞에 선언됩니다. 역시 선언 파일, 선언 클래스에서 사용하지 못합니다. 속성 데코레이터는 다음 두 개의 인수를 가지는 함수입니다.
+
+1. 정적 멤버가 속한 클래스의 생성자 함수이거나 인스턴스 멤버에 대한 클래스의 프로토타입
+2. 멤버의 이름
+
+메소드 데코레이터나 접근자 데코레이터와 비교했을 때 세 번째 인자인 속성 디스크립터가 존재하지 않습니다. 공식문서에 따르면 반환값도 무시되고, 이는 현재 프로토타입(prototype)의 멤버를 정의할 때 인스턴스 속성을 설명하는 메커니즘이 없고 송석의 초기화 과정을 관찰하거나 수정할 수 있는 방법이 없기 때문이라고 합니다.
+
+```
+function format(formatString: string){
+  return function(target: any, propertyKey: string): any {
+    let value = target[propertyKey];
+
+    function getter(){
+      return `${formatString} ${value}`;
+    }
+
+    function setter(newVal: string){
+      value = newVal;
+    }
+
+    return {
+      get: getter.
+      set: setter,
+      enumerable: true,
+      configurable: true,
+    }
+  }
+}
+
+class Gretter{
+  @format('Hello')
+  greeting: string;
+}
+
+const t = new Gretter();
+t.greeting = 'World';
+console.log(t.greeting);
+```
+
+L6: getter에서 데코레이터 인자로 들어온 formatString을 원래의 속성과 조합한 string으로 바꿉니다.
+
+L23: 데코레이터에 formatString을 전달합니다.
+
+L29: 속성을 읽을 때 getter가 호출되면서 Hello World가 출력됩니다.
+
+## 
 
 ## License
 Nest is [MIT licensed](LICENSE).
