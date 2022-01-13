@@ -15,6 +15,7 @@ and the concept of a
 
 ---
 
+
 # Routing
 
 There is an authoritative routing table stored on the config server replica set, and all nodes cache
