@@ -16,6 +16,10 @@ and the concept of a
 ---
 
 
+
+## Command
+<pre>npm install mongoose --save</pre>
+
 # Routing
 
 There is an authoritative routing table stored on the config server replica set, and all nodes cache
