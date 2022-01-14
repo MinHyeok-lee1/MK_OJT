@@ -6,37 +6,110 @@
 
 ## Nest.js 클론 코딩 웹사이트 => [nestjs.com](https://docs.nestjs.com/)
 
-## Command
-- 설치
-  ```bash
-  $ npm install
+## Nest.js 정리
+
+  ### Command
+  - 설치
+    ```bash
+    $ npm install
+    ```
+
+  - Nest.js 실행
+    ```bash
+    # development
+    $ npm run start
+
+    # watch mode
+    $ npm run start:dev
+
+    # production mode
+    $ npm run start:prod
+    ```
+
+  - 테스트
+
+    ```bash
+    # unit tests
+    $ npm run test
+
+    # e2e tests
+    $ npm run test:e2e
+
+    # test coverage
+    $ npm run test:cov
+    ```
+
+  ### Nest JS CLI로 NEST JS 시작
+  
   ```
-
-- Nest.js 실행
-  ```bash
-  # development
-  $ npm run start
-
-  # watch mode
-  $ npm run start:dev
-
-  # production mode
-  $ npm run start:prod
+  $ npm i -g @nestjs/cli
+  $ nest new project-name
   ```
+  
+  잘 설치되었는지 확인
+  
+  <pre>nest --version</pre>
+  
+  ### 모듈(Module)
 
-- 테스트
+  NestJS 모듈: App Module안에 AuthModule과 같은 필요한 모듈들이 있으며 각 모듈안에 Controller Entity Service 등이 있습니다.
+  
+  모듈은 @Module() 데코레이터로 주석이 달린 클래스입니다. @Module() 데코레이터는 Nest가 애플리케이션 구조를 구성하는데 사용하는 메타데이터를 제공합니다.
 
-  ```bash
-  # unit tests
-  $ npm run test
+  각 응용프로그램에는 하나이상의 모듈(루트 모듈)이 있습니다. 루트 모듈은 Nest가 사용하는 시작점입니다.
 
-  # e2e tests
-  $ npm run test:e2e
+  모듈은 밀접하게 관련된 기능 집합으로 구성 요소를 구성하는 효과적은 방법입니다.(기능별로 만듭니다.) ex) 유저 모듈, 주문 모듈, 챗 모듈
 
-  # test coverage
-  $ npm run test:cov
-  ```
+  같은 기능에 해당하는 것들은 하나의 모듈 폴더안에 넣어서 사용합니다.(UserController, UserService, UserEntity 다 같은 기능이기에 UserModule안에 넣습니다.)
 
+  모듈은 기본적으로 싱글톤이므로 여러 모듈간에 쉽게 공급자의 동일한 인스턴스를 공유할 수 있습니다.
+
+  ### 컨트롤러(Controller)
+  Controller 생성하기
+  
+  <pre>nest g controller 'Name' --no-spec</pre>
+
+  nest: using nestcli, g: generate, --no-spec: 테스트를 위한 소스 코드 생성 x
+
+
+  컨트롤러는 들어오는 요청을 처리하고 클라이언트에 응답을 반환합니다.
+
+  콘트롤러는 @Controller 데코레이터로 클래스를 데코레이션하여 정의됩니다.
+
+  데코레이터는 인자를 Controller에 의해서 처리되는 "경로"로 받습니다.
+
+  <b>Handler란?</b>
+
+  핸들러는 @Get, @Post, @Delete 등과 같은 데코레이터로 장식된 컨트롤러 클래스 내의 단순한 메서드입니다.
+
+  ### 프로바이더(Provider)
+  
+  프로바이더는 Nest의 기본 개념입니다. 대부분의 기본 Nest 클래스는 서비스, 리포지토리, 팩토리, 헬퍼등 프로바이더로 취급될 수 있습니다. 프로바이더의 주요 아이디어는 종속성으로 주입할 수 있다는 것입니다. 즉, 객체는 서로 다양한 관계를 만들 수 있으며 객체의 인스턴스를 "연결"하는 기능은 대부분 Nest 런타임 시스템에 위임될 수 있습니다.
+  
+  Provider 등록하기: Provider를 사용하기 위해서는 이것을 Nest에 등록해줘야지 사용할 수가 있습니다. 등록하기 위해서는 module 파일에서 할 수 있습니다. module 파일에 providers항목안에 해당 모듈에서 사용하고자 하는 Provider 를 넣어주시면 됩니다.
+
+  ### 서비스(Service)
+  Service 생성하기
+  
+  <pre>nest g service 'Name' --no-spec</pre>
+
+  nest: using nestcli, g: generate, --no-spec: 테스트를 위한 소스 코드 생성 x
+
+  <b>원리</b>
+  CLI를 이용해서 Service를 생성하면 이렇게 'Name'.service.ts파일이 생성됩니다.
+  이 생성된 파일 안에는 Injectable 데코레이터가 있으며 이 NestJs는 이것을 이용해서 다른 컴포넌트에서 이 서비스를 사용할 수 있게(Injectable) 만들어줍니다. 그리고 CLI로 Service 생성시에는 module에도 자동으로 Service가 추가됩니다.
+  
+  <b>개념</b>
+  서비스는 소프트웨어 개발내의 공통 개념이며, NestJS, Javascript에서만 쓰이는 개념
+
+  @Injectable 데코레이터로 감싸져서 모듈에 제공되며, 이 서비스 인스턴스는 애플리케이션 전체에서 사용
+
+  서비스는 컨트롤러에서 데이터의 유효성 체크를 하거나 데이터베이스에 아이템을 생성하는 등의 작업을 하는 부분을 처리
+
+
+
+  ### etc
+  
 ## Typescript
   ### 변수 선언
   타입스크립트에서 변수를 선언하는 방식은 다음과 같습니다.  
@@ -624,44 +697,5 @@
   1. 선언파일: 타입스크립트 소스코드를 컴파일 할 때 생성되는 파일로 타입시스템의 타입추론을 돕는 코드가 포함되어 있다. 소스파일의 이름은 d.ts로 끝난다.
   2. Property Descriptor: 속성의 특성을 설명하는 객체이다.
 
-## Nest.js 정리
-  ### Nest JS CLI로 NEST JS 시작
-  
-  ```
-  $ npm i -g @nestjs/cli
-  $ nest new project-name
-  ```
-  
-  잘 설치되었는지 확인
-  
-  <pre>nest --version</pre>
-  
-  ### 모듈
-
-  NestJS 모듈: App Module안에 BoardModule과 AuthModule이 있으며 각 모듈안에 Controller Entity Service 등이 있습니다.
-  
-  모듈은 @Module() 데코레이터로 주석이 달린 클래스입니다. @Module() 데코레이터는 Nest가 애플리케이션 구조를 구성하는데 사용하는 메타데이터를 제공합니다.
-
-  각 응용프로그램에는 하나이상의 모듈(루트 모듈)이 있습니다. 루트 모듈은 Nest가 사용하는 시작점입니다.
-
-  모듈은 밀접하게 관련된 기능 집합으로 구성 요소를 구성하는 효과적은 방법입니다.(기능별로 만듭니다.) ex) 유저 모듈, 주문 모듈, 챗 모듈
-
-  같은 기능에 해당하는 것들은 하나의 모듈 폴더안에 넣어서 사용합니다.(UserController, UserService, UserEntity 다 같은 기능이기에 UserModule안에 넣습니다.)
-
-  모듈은 기본적으로 싱글톤이므로 여러 모듈간에 쉽게 공급자의 동일한 인스턴스를 공유할 수 있습니다.
-
-  ### 컨트롤러
-  1. 라우팅
-  2. 와일드카드 사용
-  3. 요청 객체(Request Object)
-  4. 응답
-  5. 헤더
-  6. 리디렉션(Redirection)
-  7. 라우트 파라미터
-  8. 하위 도메인(Sub-Domain) 라우팅
-  9. 페이로드 다루기
-
-  ### 유저 서비스의 인터페이스
-  ### 프로바이더
 ## License
 Nest is [MIT licensed](LICENSE).
