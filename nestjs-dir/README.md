@@ -331,45 +331,45 @@
 
   이제 타입스크립트가 지원하는 5가지 데코레이터를 알아봅시다. - (클래스, 메서드, 접근자, 속성, 매개변수 데코레이터)
 
-    ### 클래스 데코레이터 (Class Decorator)
-    이름 그대로 클래스 데코레이터는 클래스 바로 앞에 선언됩니다 클래스 데코레이터는 클래스의 생성자에 적용되어 클래스 정의(definition)를 읽거나 수정할 수 있습니다. 선언 파일과 선언 클래스(declare class)내에서는 사용할 수 없습니다.
+  ### 클래스 데코레이터 (Class Decorator)
+  이름 그대로 클래스 데코레이터는 클래스 바로 앞에 선언됩니다 클래스 데코레이터는 클래스의 생성자에 적용되어 클래스 정의(definition)를 읽거나 수정할 수 있습니다. 선언 파일과 선언 클래스(declare class)내에서는 사용할 수 없습니다.
 
-    다음코드는 클래스에 reportingURL 속성을 추가하는 클래스 데코레이터의 예입니다.
+  다음코드는 클래스에 reportingURL 속성을 추가하는 클래스 데코레이터의 예입니다.
 
-    ```
-    function reportableClassDecorator<T extends { new (...args: any[]): {} }>(constructor: T) {
-      return class extends constructor {
-        reportingURL = "http://www.example.com";
-      };
+  ```
+  function reportableClassDecorator<T extends { new (...args: any[]): {} }>(constructor: T) {
+    return class extends constructor {
+      reportingURL = "http://www.example.com";
+    };
+  }
+
+  @reportableClassDecorator
+  class BugReport {
+    type = "report";
+    title: string;
+
+    constructor(t: string) {
+      this.title = t;
     }
+  }
 
-    @reportableClassDecorator
-    class BugReport {
-      type = "report";
-      title: string;
+  const bug = new BugReport("Needs dark mode");
+  console.log(bug);
+  ```
 
-      constructor(t: string) {
-        this.title = t;
-      }
-    }
+  L1: 클래스 데코레이터 팩토리입니다. 생성자 타입(,new 키워드와 함께 어떠한 형식의 인자들도 받을 수 있는 타입)을 상속받는 제네릭 타입T를 가지는 생성자(constructor)를 팩토리 메소드의 인자로 전달하고 있습니다.
 
-    const bug = new BugReport("Needs dark mode");
-    console.log(bug);
-    ```
+  L2: 클래스 데코레이터는 생성자를 리턴하는 함수여야 합니다.
 
-    L1: 클래스 데코레이터 팩토리입니다. 생성자 타입(,new 키워드와 함께 어떠한 형식의 인자들도 받을 수 있는 타입)을 상속받는 제네릭 타입T를 가지는 생성자(constructor)를 팩토리 메소드의 인자로 전달하고 있습니다.
+  L3: 클래스 데코레이터가 적용되는 클래스에 새로운 reportingURL이라는 새로운 속성을 추가합니다.
 
-    L2: 클래스 데코레이터는 생성자를 리턴하는 함수여야 합니다.
+  위 코드의 출력결과는 다음과 같습니다.
 
-    L3: 클래스 데코레이터가 적용되는 클래스에 새로운 reportingURL이라는 새로운 속성을 추가합니다.
+  <pre>{type: 'report', title: 'Needs dark mode', reportingURL: 'http://example.com'}</pre>
 
-    위 코드의 출력결과는 다음과 같습니다.
+  BugReport클래스에 선언되어 있지 않은 새로운 속성이 추가되었습니다.
 
-    <pre>{type: 'report', title: 'Needs dark mode', reportingURL: 'http://example.com'}</pre>
-
-    BugReport클래스에 선언되어 있지 않은 새로운 속성이 추가되었습니다.
-
-    ⚠️ 클래스의 타입이 변경되는 것은 아닙니다. 타입 시스템은 reportingURL을 인식하지 못하기 때문에 bug.reportingURL과 같이 직접 사용할 수 없습니다.
+  ⚠️ 클래스의 타입이 변경되는 것은 아닙니다. 타입 시스템은 reportingURL을 인식하지 못하기 때문에 bug.reportingURL과 같이 직접 사용할 수 없습니다.
 
   ### 메소드 데코레이터 (Method Decorator)
   메소드 데코레이터는 메소드 바로 앞에 선언됩니다. 메소드의 속성 디스크립터에 적용되고 메소드의 정의를 읽거나 수정할 수 있습니다. 선언파일, 오버로드 메소드, 선언 클래스에는 사용할 수 없습니다.
