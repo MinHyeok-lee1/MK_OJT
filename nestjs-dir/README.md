@@ -625,6 +625,31 @@
   2. Property Descriptor: 속성의 특성을 설명하는 객체이다.
 
 ## Nest.js 정리
+  ### Nest JS CLI로 NEST JS 시작
+  
+  ```
+  $ npm i -g @nestjs/cli
+  $ nest new project-name
+  ```
+  
+  잘 설치되었는지 확인
+  
+  <pre>nest --version</pre>
+  
+  ### 모듈
+
+  NestJS 모듈: App Module안에 BoardModule과 AuthModule이 있으며 각 모듈안에 Controller Entity Service 등이 있습니다.
+  
+  모듈은 @Module() 데코레이터로 주석이 달린 클래스입니다. @Module() 데코레이터는 Nest가 애플리케이션 구조를 구성하는데 사용하는 메타데이터를 제공합니다.
+
+  각 응용프로그램에는 하나이상의 모듈(루트 모듈)이 있습니다. 루트 모듈은 Nest가 사용하는 시작점입니다.
+
+  모듈은 밀접하게 관련된 기능 집합으로 구성 요소를 구성하는 효과적은 방법입니다.(기능별로 만듭니다.) ex) 유저 모듈, 주문 모듈, 챗 모듈
+
+  같은 기능에 해당하는 것들은 하나의 모듈 폴더안에 넣어서 사용합니다.(UserController, UserService, UserEntity 다 같은 기능이기에 UserModule안에 넣습니다.)
+
+  모듈은 기본적으로 싱글톤이므로 여러 모듈간에 쉽게 공급자의 동일한 인스턴스를 공유할 수 있습니다.
+
   ### 컨트롤러
   1. 라우팅
   2. 와일드카드 사용
@@ -638,6 +663,5 @@
 
   ### 유저 서비스의 인터페이스
   ### 프로바이더
-  ### 모듈
 ## License
 Nest is [MIT licensed](LICENSE).
