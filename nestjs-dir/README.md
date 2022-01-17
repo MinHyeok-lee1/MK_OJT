@@ -124,11 +124,11 @@ NestJS 기본구조 설명:
 
   nest: using nestcli, g: generate, --no-spec: 테스트를 위한 소스 코드 생성 x
 
-  <b>원리</b>
+  <b>원리: </b>
   CLI를 이용해서 Service를 생성하면 이렇게 'Name'.service.ts파일이 생성됩니다.
   이 생성된 파일 안에는 Injectable 데코레이터가 있으며 이 NestJs는 이것을 이용해서 다른 컴포넌트에서 이 서비스를 사용할 수 있게(Injectable) 만들어줍니다. 그리고 CLI로 Service 생성시에는 module에도 자동으로 Service가 추가됩니다.
   
-  <b>개념</b>
+  <b>개념: </b>
   서비스는 소프트웨어 개발내의 공통 개념이며, NestJS, Javascript에서만 쓰이는 개념
 
   @Injectable 데코레이터로 감싸져서 모듈에 제공되며, 이 서비스 인스턴스는 애플리케이션 전체에서 사용
