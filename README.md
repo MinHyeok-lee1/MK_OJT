@@ -78,6 +78,15 @@
     + sudo service sshd restart<br>
     + exit<br>
 
+Repository 원격 연결 확인
+* $ git remote -v
+
+Repository 연결 해제
+* $ git remote remove origin
+
+Repository 이름, 주소 연결
+* $ git remote add origin "github's address"
+User's name & email 설정
 전역 설정
 * $ git config --global user.name "Your Name"
 * $ git config --global user.email "you@example.com"
