@@ -115,6 +115,8 @@ NestJS 기본구조 설명:
   
   Provider 등록하기: Provider를 사용하기 위해서는 이것을 Nest에 등록해줘야지 사용할 수가 있습니다. 등록하기 위해서는 module 파일에서 할 수 있습니다. module 파일에 providers항목안에 해당 모듈에서 사용하고자 하는 Provider 를 넣어주시면 됩니다.
 
+  Provider의 종류: Service, Helper, Factory, Repository 등
+
   ### 서비스(Service)
   Service 생성하기
   
@@ -136,6 +138,13 @@ NestJS 기본구조 설명:
 
 
   ### etc
+  유효성 체크: class-validator(isBoolean, isNum, isEnum, isEmail)
+  NestJS 미들웨어들 - PIPES, Filters, Guards, Interceptors
+  DTO: 데이터 유효성 체크
+  ORM: Entity
+  403: forbidden vs 404: not found이지만 403을 띄우는것 자체가 정보를 주는 것이기 때문에 404를 띄운다.
+  로그의 종류: Log, Warning, Error, Debug, Verbose
+  설정(config 모듈): Codebase(XML, JSON, YAML) vs Envirorment Variables(환경변수)
   
 ## Typescript
   ### 변수 선언
