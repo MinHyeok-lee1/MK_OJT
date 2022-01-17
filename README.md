@@ -8,7 +8,7 @@
 1) 개발환경 구축 - VS Code, Next.js, NestJS<br>
 * VSC: VSC 설치 및 확장프로그램(Remote-SSH) 설치<br>
 * Next.js 개발환경: nextjs-dir 폴더에 들어간다, 서버 시작 명령어: npm run dev 명령어 => 포트 변경필요<br>
-*  Nest.js 개발환경: nestjs-dir 폴더에 들어간다, 서버 시작 명령어: npm run start:dev 명령어 => 포트 변경필요<br><br>
+* Nest.js 개발환경: nestjs-dir 폴더에 들어간다, 서버 시작 명령어: npm run start:dev 명령어 => 포트 변경필요<br><br>
 
 2) 로컬 서버 접속 환경 구축 - SSH<br>
 * VSC에서 SSH연결 순서:<br>
