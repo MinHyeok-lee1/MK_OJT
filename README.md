@@ -54,6 +54,7 @@
     + .ssh\config에서 User를 dev로 설정해주어서 해결 User는 그냥 단순한 별명이 아닌 계정이름이다. Host는 상관없지만 User는 맞춰줘야함.<br>
   - SSH 연결 시에 서버쪽에서 포트를 연결할 때 필요한 명령어 => 포트 허용(ufw 방화벽 설정)<br>
     + Ubuntu 는 앞에 sudo 입력<br>
+    + ufw 상태 확인 sudo ufw status
     + 설치: apt-get -y install ufw<br>
     + 활성화: ufw enable<br>
     + 비활성화: ufw disable<br>
@@ -73,6 +74,7 @@
     + 특정IP(port) 막음: sudo ufw deny from 111.111.111.111 to any port 21<br>
   - sshd(SSH Demon)접근(cmd -> ssh 연결) 및 vim에서 sshd 포트등록 및 재시작에 관한 이슈<br>
     + <b>sudo vim /etc/ssh/sshd_config</b> -> vim에서 SSH Port추가(..22번)<br>
+    + vim실행 후, i(input), port추가 - ex.Port 9022, :(cmd모드), wq(write & quit)
     + sudo service sshd restart<br>
     + exit<br>
 
