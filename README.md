@@ -31,9 +31,6 @@
 * Push, Pull: Push 순서:git ( add . or *-> commit -m 'message'-> push <=> pull )<br>
 * READNE.md: 현재 작성하듯 프로젝트의 설명등의 형상관리를 할 수 있음(추가로 사용설명서 등..)<br><br>
 
-* $ git config (--global) user.name ("Your Name")
-* $ git config (--global) user.email ("you@example.com")
-
 * [1월 3주차 OJT KEYWORD: Next.js(dir)](https://github.com/MinHyeok-lee1/MK_OJT/tree/master/nextjs-dir)
 1) nextjs.org 튜토리얼 클론 코딩 - 로컬 서버의 개인 작업공간 이용<br>
 2) Git을 통해 소스코드 관리<br>
@@ -80,6 +77,22 @@
     + vim실행 후, i(input), port추가 - ex.Port 9022, :(cmd모드), wq(write & quit)
     + sudo service sshd restart<br>
     + exit<br>
+
+전역 설정
+* $ git config --global user.name "Your Name"
+* $ git config --global user.email "you@example.com"
+
+개별 저장소의 설정
+* $ git config user.name "Your Name"
+* $ git config user.email "you@example.com"
+
+전역 설정을 삭제
+* $ git config --global --unset user.name
+* $ git config --global --unset user.email
+
+개별 저장소의 설정을 삭제
+* $ git config --unset user.name
+* $ git config --unset user.email
 
 * 3주차: 1월 3주차 OJT: Next.js 진행중 발생issue
   - Next.js 개발환경: nextjs-dir 폴더에 들어간다.<br>
