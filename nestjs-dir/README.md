@@ -96,6 +96,8 @@ NestJS 기본구조 설명:
   
   <pre>nest g controller 'Name' --no-spec</pre>
 
+  <pre>nest g co 'Name'</pre>
+
   nest: using nestcli, g: generate, --no-spec: 테스트를 위한 소스 코드 생성 x
 
 
@@ -140,8 +142,21 @@ NestJS 기본구조 설명:
   ### etc
   유효성 체크: class-validator(isBoolean, isNum, isEnum, isEmail)
   NestJS 미들웨어들 - PIPES, Filters, Guards, Interceptors
-  DTO: 데이터 유효성 체크
-  ORM: Entity
+
+  DTO(Data Transfer Object): 역할 - 데이터 유효성 체크, 데이터를 전달하기 위한 객체이다. 계층간 데이터를 주고 받을 때, 데이터를 담아서 전달하는 바구니로 여러 레이어 사이에서 DTO를 사용할 수 있지만, 주로 View와 Controller 사이에서 데이터를 주고 받을 때 활용한다.
+  
+  DTO는 getter / setter 메소드를 포함한다. 이 외의 비즈니스 로직은 포함하지 않는다. 아래 코드처럼 <b>setter를 가지는 경우 가변 객체</b>로 활용할 수 있다.
+  
+  한편, <b>setter가 아닌 생성자를 이용해서 초기화하는 경우 불변객체</b>로 활용할 수 있다. 불변 객체로 만들면 데이터를 전달하는 과정에서 데이터가 변조되지 않음을 보장할 수 있다.
+
+  VO(Value Object): VO는 값 자체를 표현하는 객체이다. VO는 객체들의 주소가 달라도 값이 같으면 동일한 것으로 여긴다. 예를 들어 고유번호가 서로 다른 만원 2장이 있다고 생각하자. 이 둘은 고유번호(주소)는 다르지만 10000원(값)은 동일하다.
+
+  VO는 getter 메소드와 함께 비즈니스 로직도 포함할 수 있다. 단, setter 메소드는 가지지 않는다. 또, 값 비교를 위해 equals()와 hashCode() 메소드를 오버라이딩 해주고 서로 다르지만 값이 같은 두 객체를 두 메소드를 통해 비교해준다면 테스트를 통과한다. 왜냐하면 VO는 주소가 아닌 값을 비교하기 때문이다.
+
+  Entity(ORM)는 실제 DB 테이블과 매핑되는 핵심 클래스이다.이를 기준으로 테이블이 생성되고 스키마가 변경된다. 따라서, 절대로 Entity를 요청이나 응답값을 전달하는 클래스로 사용해서는 안된다. Entity는 id로 구분된다. 그리고 비즈니스 로직을 포함할 수 있다.
+
+  Entity는 DTO처럼 setter를 가지는 경우 가변 객체로 활용할 수 있다.
+
   403: forbidden vs 404: not found이지만 403을 띄우는것 자체가 정보를 주는 것이기 때문에 404를 띄운다.
   로그의 종류: Log, Warning, Error, Debug, Verbose
   설정(config 모듈): Codebase(XML, JSON, YAML) vs Envirorment Variables(환경변수)
