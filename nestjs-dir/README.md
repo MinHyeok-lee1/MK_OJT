@@ -139,7 +139,7 @@ NestJS 기본구조 설명:
 
 
 
-  ### etc
+  ### etc..
   유효성 체크: class-validator(isBoolean, isNum, isEnum, isEmail)
   NestJS 미들웨어들 - PIPES, Filters, Guards, Interceptors
 
@@ -165,8 +165,11 @@ NestJS 기본구조 설명:
   | 로직 포함 여부| 로직을 포함할 수 없다.| 로직을 포함할 수 있다.| 로직을 포함할 수 있다.|
 
   403: forbidden vs 404: not found이지만 403을 띄우는것 자체가 정보를 주는 것이기 때문에 404를 띄운다.
+
   로그의 종류: Log, Warning, Error, Debug, Verbose
+
   설정(config 모듈): Codebase(XML, JSON, YAML) vs Envirorment Variables(환경변수)
+  
   Swagger란: Swagger는 API 문서 자동화 도구이다 이전의 프로젝트에서 사용한 경험으로는 API 문서를 따로 작성할 필요 없이 코드를 수정하면서 API 문서를 같이 수정할 수 있는 것이 큰 장점, 만약에 코드와 API 문서를 따로 관리하게 되면 코드를 수정하였는데 API 문서 최신화를 잊어버려서 다른 팀원들에게 공유된 API 문서가 실제 API와 다른 문제가 발생할 수 있다. 다른 장점으로는 Swagger는 API를 테스트할 수 있는 GUI를 제공한다.
   
 ## Typescript
