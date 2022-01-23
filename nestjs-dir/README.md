@@ -157,6 +157,13 @@ NestJS 기본구조 설명:
 
   Entity는 DTO처럼 setter를 가지는 경우 가변 객체로 활용할 수 있다.
 
+
+  | 분류| DTO| VO| Entity|
+  |:---|:---:|:---:|---:| 
+  | 정의| 레이어간 데이터 전송용 객체| 값 표현용 객체| DB 테이블 매핑용 객체|
+  | 상태 변경 여부| 가변 또는 불변 객체| 불변 객체| 가변 또는 불변 객체|
+  | 로직 포함 여부| 로직을 포함할 수 없다.| 로직을 포함할 수 있다.| 로직을 포함할 수 있다.|
+
   403: forbidden vs 404: not found이지만 403을 띄우는것 자체가 정보를 주는 것이기 때문에 404를 띄운다.
   로그의 종류: Log, Warning, Error, Debug, Verbose
   설정(config 모듈): Codebase(XML, JSON, YAML) vs Envirorment Variables(환경변수)
