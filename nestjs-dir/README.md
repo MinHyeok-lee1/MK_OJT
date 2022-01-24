@@ -139,6 +139,19 @@ NestJS 기본구조 설명:
 
 
 
+
+
+  ### 스웨거(Swagger): 
+  Swagger는 API 문서 자동화 도구이다 이전의 프로젝트에서 사용한 경험으로는 API 문서를 따로 작성할 필요 없이 코드를 수정하면서 API 문서를 같이 수정할 수 있는 것이 큰 장점, 만약에 코드와 API 문서를 따로 관리하게 되면 코드를 수정하였는데 API 문서 최신화를 잊어버려서 다른 팀원들에게 공유된 API 문서가 실제 API와 다른 문제가 발생할 수 있다. 다른 장점으로는 Swagger는 API를 테스트할 수 있는 GUI를 제공한다.
+
+  NestJS에서 Swagger 설치하는 방법
+  <pre>npm install --save @nestjs/swagger swagger-ui-express</pre>  
+
+  NestJS에서 Swagger 설치하는 방법
+  <pre>npm install --save @nestjs/swagger fastify-swagger</pre>  
+
+  
+
   ### etc..
   유효성 체크: class-validator(isBoolean, isNum, isEnum, isEmail)
   NestJS 미들웨어들 - PIPES, Filters, Guards, Interceptors
@@ -169,8 +182,6 @@ NestJS 기본구조 설명:
   로그의 종류: Log, Warning, Error, Debug, Verbose
 
   설정(config 모듈): Codebase(XML, JSON, YAML) vs Envirorment Variables(환경변수)
-  
-  Swagger란: Swagger는 API 문서 자동화 도구이다 이전의 프로젝트에서 사용한 경험으로는 API 문서를 따로 작성할 필요 없이 코드를 수정하면서 API 문서를 같이 수정할 수 있는 것이 큰 장점, 만약에 코드와 API 문서를 따로 관리하게 되면 코드를 수정하였는데 API 문서 최신화를 잊어버려서 다른 팀원들에게 공유된 API 문서가 실제 API와 다른 문제가 발생할 수 있다. 다른 장점으로는 Swagger는 API를 테스트할 수 있는 GUI를 제공한다.
   
 ## Typescript
   ### 변수 선언
