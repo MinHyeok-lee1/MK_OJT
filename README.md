@@ -31,6 +31,30 @@
 * Push, Pull: Push 순서:git ( add . or *-> commit -m 'message'-> push <=> pull )<br>
 * READNE.md: 현재 작성하듯 프로젝트의 설명등의 형상관리를 할 수 있음(추가로 사용설명서 등..)<br><br>
 
+### 기존에 있는 프로젝트를 연결하는 방법
+
+1. git 초기화
+* $ git init
+
+2. github 또는 bitbucket 등 프로젝트를 연결 할 repository 생성
+
+3. repository 연결
+* $ git remote add origin username@'git @ address.git'
+연결된 repository 확인
+* $ git remote -v
+
+4. 새 repository에서 내용을 pull 받음으로써 git history를 동기화
+* $ git pull origin master
+
+5. 새 repository에 파일을 업로드 하기 위해 스테이지에 파일올림
+* $ git git add .
+
+6. 최초 커밋
+* $ git commit -m "first commit"
+
+7. repository에 파일 업로드
+* $ git push -u origin master
+
 * [1월 3주차 OJT KEYWORD: Next.js(dir)](https://github.com/MinHyeok-lee1/MK_OJT/tree/master/nextjs-dir)
 1) nextjs.org 튜토리얼 클론 코딩 - 로컬 서버의 개인 작업공간 이용<br>
 2) Git을 통해 소스코드 관리<br>
