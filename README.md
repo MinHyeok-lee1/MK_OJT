@@ -40,6 +40,7 @@
 
 3. repository 연결
 * $ git remote add origin username@'git @ address.git'
+
 연결된 repository 확인
 * $ git remote -v
 
