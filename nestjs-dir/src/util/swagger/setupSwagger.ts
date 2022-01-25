@@ -13,7 +13,6 @@ export function setupSwagger(app: INestApplication): void{
         .setTitle('NestJS Study API Docs')
         .setDescription('NestJS Study API description')
         .setVersion('1.0.0')
-        .addTag('First')
         .build();
     
     const document = SwaggerModule.createDocument(app, options);
