@@ -50,31 +50,31 @@
 #### 기존에 있는 프로젝트를 연결하는 방법
 
 1. git 초기화
-* $ git init
+  * $ git init
 
 2. github 또는 bitbucket 등 프로젝트를 연결 할 repository 생성
 
 3. repository 연결
-* $ git remote add origin username@'git @ address.git'
+  * $ git remote add origin username@'git @ address.git'
 
   연결된 repository 확인
-  * $ git remote -v
+    * $ git remote -v
 
 4. 새 repository에서 내용을 pull 받음으로써 git history를 동기화
-* $ git pull origin master
+  * $ git pull origin master
 
 5. 새 repository에 파일을 업로드 하기 위해 스테이지에 파일올림
-* $ git git add .
+  * $ git git add .
 
 6. 최초 커밋
-* $ git commit -m "first commit"
+  * $ git commit -m "first commit"
 
 7. repository에 파일 업로드
-* $ git push -u origin master
+  * $ git push -u origin master
 
 ## 이슈
 * GitHub 사용법 & 각 학습폴더 생성 & VS Code, Next.js(React), NestJS 전체적으로 프로젝트를 진행하며 발생한 이슈를 기록
-* 2주차: 개발환경의 이해, SSH & GitHub 진행중 발생issue
+* 2주차: 개발환경의 이해, SSH & GitHub 진행중 발생 Issue
   - SSH 로컬 작업환경 개발환경 구축중 이슈발생: SSH연결 할 때 .ssh\config 에서 User(계정)를 dev로 하지않아서 Permission이 denied되는 상황이 발생하였다.<br>
     + .ssh\config에서 User를 dev로 설정해주어서 해결 User는 그냥 단순한 별명이 아닌 계정이름이다. Host는 상관없지만 User는 맞춰줘야함.<br>
   - SSH 연결 시에 서버쪽에서 포트를 연결할 때 필요한 명령어 => 포트 허용(ufw 방화벽 설정)<br>
@@ -104,29 +104,29 @@
     + exit<br>
 
 Repository 원격 연결 확인
-* $ git remote -v
+  * $ git remote -v
 
 Repository 연결 해제
-* $ git remote remove origin
+  * $ git remote remove origin
 
 Repository 이름, 주소 연결
-* $ git remote add origin "github's address"
+  * $ git remote add origin "github's address"
 User's name & email 설정
 전역 설정
-* $ git config --global user.name "Your Name"
-* $ git config --global user.email "you@example.com"
+  * $ git config --global user.name "Your Name"
+  * $ git config --global user.email "you@example.com"
 
 개별 저장소의 설정
-* $ git config user.name "Your Name"
-* $ git config user.email "you@example.com"
+  * $ git config user.name "Your Name"
+  * $ git config user.email "you@example.com"
 
 전역 설정을 삭제
-* $ git config --global --unset user.name
-* $ git config --global --unset user.email
+  * $ git config --global --unset user.name
+  * $ git config --global --unset user.email
 
 개별 저장소의 설정을 삭제
-* $ git config --unset user.name
-* $ git config --unset user.email
+  * $ git config --unset user.name
+  * $ git config --unset user.email
 
 * 3주차: 1월 3주차 OJT: Next.js 진행중 발생issue
   - Next.js 개발환경: nextjs-dir 폴더에 들어간다.<br>
