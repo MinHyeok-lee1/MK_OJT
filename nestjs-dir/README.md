@@ -124,6 +124,8 @@ NestJS 기본구조 설명:
   
   <pre>nest g service 'Name' --no-spec</pre>
 
+  <pre>nest g s 'Name'</pre>
+
   nest: using nestcli, g: generate, --no-spec: 테스트를 위한 소스 코드 생성 x
 
   <b>원리: </b>
@@ -147,7 +149,7 @@ NestJS 기본구조 설명:
   NestJS에서 Swagger 설치하는 방법
   <pre>npm install --save @nestjs/swagger swagger-ui-express</pre>  
 
-  NestJS에서 Swagger 설치하는 방법
+  NestJS(fastify)를 사용하는 경우 Swagger 설치하는 방법
   <pre>npm install --save @nestjs/swagger fastify-swagger</pre>  
 
   
