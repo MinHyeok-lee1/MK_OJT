@@ -41,8 +41,8 @@
 3. repository 연결
 * $ git remote add origin username@'git @ address.git'
 
-연결된 repository 확인
-* $ git remote -v
+  연결된 repository 확인
+  * $ git remote -v
 
 4. 새 repository에서 내용을 pull 받음으로써 git history를 동기화
 * $ git pull origin master
