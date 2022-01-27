@@ -72,6 +72,9 @@
 7. repository에 파일 업로드
   * $ git push -u origin master
 
+8. [Git] ! [rejected] master -> master (non-fast-forward) 해결 방법
+  * $ git push origin +master 
+
 ## 이슈
 * GitHub 사용법 & 각 학습폴더 생성 & VS Code, Next.js(React), NestJS 전체적으로 프로젝트를 진행하며 발생한 이슈를 기록
 * 2주차: 개발환경의 이해, SSH & GitHub 진행중 발생 Issue
