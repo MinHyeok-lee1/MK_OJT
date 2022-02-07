@@ -1,6 +1,7 @@
 export class Toy {
     id: number;
-    title: string;
-    year: number;
-    generes: string[];
+    uid: string;
+    password: string;
+    email: string;
+    etc: string[];
 }
