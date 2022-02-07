@@ -4,12 +4,17 @@ import {
 import {
   ToysModule
 } from './toys/toys.module';
-
-const dbInfo = 'mongodb://localhost:27017/test';
-console.log(dbInfo)
+import {
+  MongooseModule
+} from '@nestjs/mongoose';
+import {
+  Mongoose
+} from 'mongoose';
 
 @Module({
-  imports: [ToysModule],
+  imports: [ToysModule,
+    MongooseModule.forRoot('mongodb://localhost:27017/test')
+  ],
   controllers: [],
   providers: [],
 })
