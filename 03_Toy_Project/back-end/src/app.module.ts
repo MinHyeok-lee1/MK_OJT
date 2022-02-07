@@ -17,10 +17,10 @@ const uri = "mongodb+srv://kfdd6630:C6xjaUX2e7TVkW!@cluster0.exm9u.mongodb.net/m
 @Module({
   imports: [ToysModule,
     MongooseModule.forRoot('mongodb://localhost:27017/test', {
-      connectionName: 'cats',
+      connectionName: 'toys',
     }),
     MongooseModule.forRoot(uri, {
-      connectionName: 'dog',
+      connectionName: 'toy',
     }),
   ],
   controllers: [],

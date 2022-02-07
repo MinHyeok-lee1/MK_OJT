@@ -2,9 +2,12 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateToyDTO } from './dto/create-toys.dto';
 import { UpdateToyDTO } from './dto/update-toys.dto';
 import { Toy } from './entities/toys.entity';
+import { InjectConnection } from '@nestjs/mongoose';
+import { Connection } from 'mongoose';
 
 @Injectable()
 export class ToysService {
+    constructor(@InjectConnection('toys') private connection: Connection) {}
     private toys: Toy[] = [];
 
     getAll(): Toy[] {

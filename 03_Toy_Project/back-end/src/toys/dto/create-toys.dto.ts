@@ -1,19 +1,16 @@
-import { IsNumber, IsOptional, IsString, ValidateNested } from "class-validator";
+import { IsOptional, IsString } from "class-validator";
 import { ApiProperty } from "@nestjs/swagger"
 
 export class CreateToyDTO {
     @ApiProperty({ description: '회원 가입에 사용할 사용자 id' })
-    @ValidateNested()
     @IsString()
-    readonly uid: string;
+    name: string;
 
     @ApiProperty({ description: '회원 가입에 사용할 사용자 password' })
-    @ValidateNested()
     @IsString()
     readonly password: string;
 
     @ApiProperty({ description: '회원 가입에 사용할 사용자 email' })
-    @ValidateNested()
     @IsString()
     readonly email: string;
 
