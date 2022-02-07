@@ -1,4 +1,4 @@
-export class Movie {
+export class Toy {
     id: number;
     title: string;
     year: number;

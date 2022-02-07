@@ -1,8 +1,9 @@
 import { IsNumber, IsOptional, IsString } from "class-validator";
+import { ApiProperty } from "@nestjs/swagger"
 
-export class CreateMovieDTO {
+export class CreateToyDTO {
     @IsString()
-    readonly title: string;
+    readonly uid: string;
     @IsNumber()
     readonly year: number;
 
