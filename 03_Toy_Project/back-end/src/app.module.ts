@@ -12,11 +12,11 @@ import { ToysController } from './toys/toys.controller';
 
 
 // const uri = "mongodb+srv://kfdd6630:C6xjaUX2e7TVkW!@cluster0.exm9u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-const uri = "mongodb://localhost:27017/test";
+const uri = "mongodb://172.30.1.34:27017/";
 
 @Module({
   imports: [
-    MongooseModule.forRoot('uri'),
+    MongooseModule.forRoot(uri),
     MongooseModule.forFeature([{name: Toy.name, schema: ToySchema}]),
   ],
   controllers: [AppController, ToysController],
