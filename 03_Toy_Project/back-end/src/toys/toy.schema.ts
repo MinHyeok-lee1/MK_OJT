@@ -6,9 +6,6 @@ export type ToyDocument = Toy & Document;
 @Schema()
 export class Toy {
     @Prop()
-    id: number;
-
-    @Prop()
     name: string;
 
     @Prop()
@@ -16,9 +13,6 @@ export class Toy {
     
     @Prop()
     email: string;
-    
-    @Prop()
-    etc: string[];
 }
 
 export const ToySchema = SchemaFactory.createForClass(Toy);

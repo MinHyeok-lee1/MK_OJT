@@ -1,11 +1,11 @@
-import { Module } from '@nestjs/common';
-import { ToysController } from './toys.controller';
-import { ToysService } from './toys.service';
+// import { Module } from '@nestjs/common';
+// import { ToysController } from './toys.controller';
+// import { ToysService } from './toys.service';
 
-@Module({
-    imports: [
-      ],
-      controllers: [ToysController],
-      providers: [ToysService],
-})
-export class ToysModule {}
+// @Module({
+//     imports: [
+//       ],
+//       controllers: [],
+//       providers: [],
+// })
+// export class ToysModule {}
