@@ -1,21 +1,25 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { CreateToyDTO } from './dto/create-toys.dto';
-import { UpdateToyDTO } from './dto/update-toys.dto';
-import { Toy } from './entities/toys.entity';
 import { InjectConnection } from '@nestjs/mongoose';
-import { Connection } from 'mongoose';
+import { Connection, Model } from 'mongoose';
+import { Toy, ToyDocument } from './toy.schema';
 
 @Injectable()
 export class ToysService {
-    constructor(@InjectConnection('toys') private connection: Connection) {}
-    private toys: Toy[] = [];
 
-    getAll(): Toy[] {
-        return this.toys;
+    constructor(@InjectConnection('toys') private toyModel: Model<ToyDocument>) {}
+
+    
+    async create(toy: Toy): Promise<Toy> {
+        const newToy = new this.toyModel(toy);
+        return newToy.save();
     }
 
-    getOne(id: number): Toy {
-        const toy = this.toys.find(toy => toy.id === id);
+    async getAll(): Promise<Toy[]> {
+        return await this.toyModel.find().exec();
+    }
+
+    async getOne(id: number): Promise<Toy> {
+        const toy = this.toyModel.findById(id).exec();
         if (!toy) {
             throw new NotFoundException(`Toy with ID ${id} not found.`);
         }
@@ -23,21 +27,12 @@ export class ToysService {
         return toy;
     }
 
-    deleteOne(id: number) {
-        this.getOne(id);
-        this.toys = this.toys.filter(toy => toy.id !== id);
+    async update(id: number, toy: Toy): Promise<Toy> {
+        return await this.toyModel.findByIdAndUpdate(id, toy, {new: true})
     }
 
-    create(toyData: CreateToyDTO) {
-        this.toys.push({
-            id: this.toys.length + 1,
-            ...toyData
-        });
+    async delete(id: number): Promise<any>{
+        return await this.toyModel.findByIdAndRemove(id);
     }
 
-    update(id: number, updateData: UpdateToyDTO) {
-        const toy = this.getOne(id);
-        this.deleteOne(id);
-        this.toys.push({ ...toy, ...updateData });
-    }
 }
