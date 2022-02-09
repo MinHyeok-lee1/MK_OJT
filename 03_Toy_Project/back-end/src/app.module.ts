@@ -12,7 +12,7 @@ import { ToysController } from './toys/toys.controller';
 
 
 // const uri = "mongodb+srv://kfdd6630:C6xjaUX2e7TVkW!@cluster0.exm9u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-const uri = "mongodb://172.30.1.34:27017/";
+const uri = "mongodb://172.30.1.34:27017/test";
 
 @Module({
   imports: [

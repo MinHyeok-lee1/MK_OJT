@@ -1,5 +1,6 @@
-import { Body, Controller, Delete, Get, HttpStatus, Param, Post, Put, Query, Res } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpStatus, Param, Patch, Post, Put, Query, Res } from '@nestjs/common';
 import { response } from 'express';
+import { ObjectId } from 'mongoose';
 import { Toy } from './toy.schema';
 import { ToysService } from './toys.service';
 
@@ -24,24 +25,24 @@ export class ToysController {
     }
 
     @Get("/:id")
-    async getOne(@Res() response: any, @Param('id') toy_id: number) {
-        const toy = await this.toysService.getOne(toy_id);
+    async getOne(@Res() response: any, @Param('id') id: ObjectId) {
+        const toy = await this.toysService.getOne(id);
         return response.status(HttpStatus.OK).json({
             toy
         })
     }
 
-    @Put(':/id')
-    async update(@Res() response: any, @Param('id') toy_id:number, @Body() toy: Toy) {
-        const updatedToy = await this.toysService.update(toy_id, toy);
+    @Patch(':/id')
+    async update(@Res() response: any, @Param('id') id:ObjectId, @Body() toy: Toy) {
+        const updatedToy = await this.toysService.update(id, toy);
         return response.status(HttpStatus.OK).json({
             updatedToy
         })
     }
 
     @Delete("/:id")
-    async delete(@Res() reponse: any, @Param('id') toy_id: number) {
-        const deletedToy = await this.toysService.delete(toy_id);
+    async delete(@Res() reponse: any, @Param('id') id: ObjectId) {
+        const deletedToy = await this.toysService.delete(id);
         return response.status(HttpStatus.OK).json({
           deletedToy  
         })

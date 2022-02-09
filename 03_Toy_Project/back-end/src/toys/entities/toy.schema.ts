@@ -6,6 +6,9 @@ export type ToyDocument = Toy & Document;
 @Schema()
 export class Toy {
     @Prop()
+    id: string;
+
+    @Prop()
     name: string;
 
     @Prop()

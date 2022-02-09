@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
-import { Toy, ToyDocument } from './toy.schema';
+import { Model, ObjectId } from 'mongoose';
+import { Toy, ToyDocument } from './entities/toy.schema';
 
 @Injectable()
 export class ToysService {
@@ -17,7 +17,7 @@ export class ToysService {
         return await this.toyModel.find().exec();
     }
 
-    async getOne(id: number): Promise<Toy> {
+    async getOne(id: ObjectId): Promise<Toy> {
         const toy = this.toyModel.findById(id).exec();
         if (!toy) {
             throw new NotFoundException(`Toy with ID ${id} not found.`);
@@ -26,11 +26,11 @@ export class ToysService {
         return toy;
     }
 
-    async update(id: number, toy: Toy): Promise<Toy> {
+    async update(id: ObjectId, toy: Toy): Promise<Toy> {
         return await this.toyModel.findByIdAndUpdate(id, toy, {new: true})
     }
 
-    async delete(id: number): Promise<any>{
+    async delete(id: ObjectId): Promise<any>{
         return await this.toyModel.findByIdAndRemove(id);
     }
 
