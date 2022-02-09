@@ -1,12 +1,13 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Transform } from 'class-transformer';
 import { IsArray, IsOptional, IsString } from 'class-validator';
-import { TypegooseModule } from 'nestjs-typegoose';
+import { MongooseModule, Prop } from '@nestjs/mongoose';
+import { defTakeNum, maxTakeNum, minTakeNum } from 'src/constants/model.const';
 
 /**
  * DB의 스키마로 사용할 모든 데이터 모델 클래스에 상속되는 기본 클래스
  */
-export class BaseEntity extends TypegooseModule {
+export class BaseEntity extends MongooseModule {
   /**
    * 데이터 모델 개발법
    * 단일 클래스를 Schema, CreateDto, UpdateDto용으로 혼용하는 것을 목적으로 함
@@ -31,74 +32,30 @@ export class BaseEntity extends TypegooseModule {
   public _id: string;
 
   @ApiProperty({ description: '데이터 생성 시점 (자동 생성)', required: false })
-  @prop()
+  @Prop()
   public createdAt: Date;
 
   @ApiProperty({ description: '데이터 갱신 시점 (자동 갱신)', required: false })
-  @prop()
+  @Prop()
   public updatedAt: Date;
 
   @ApiProperty({ description: '데이서 소유 업체 (자동 주입)', required: false })
-  @prop()
+  @Prop()
   public _cID: string;
 
   @ApiProperty({
     description: '데이터 작성자의 오브젝트 ID (자동 주입)',
     required: false,
   })
-  @prop()
+  @Prop()
   public _uID: string;
 
   /**  버전값 (조회되진 않음) */
-  @prop({ type: Number, select: false }) // 버전값은 조회되지 않도록 할 때
+  @Prop({ type: Number, select: false }) // 버전값은 조회되지 않도록 할 때
   // @prop()
   __v?: number;
 }
 
-export class FindParameters {
-  @ApiProperty({
-    description: '요청 페이지',
-    default: 1,
-    required: false,
-  })
-  @IsOptional()
-  @Transform(getValidPageNumber)
-  page?: number = 1;
-
-  @ApiProperty({
-    description: '페이지당 결과 수, 1 ~ 100 사이의 정수',
-    default: defTakeNum,
-    minimum: minTakeNum,
-    maximum: maxTakeNum,
-    required: false,
-  })
-  @IsOptional()
-  @Transform(getValidTakeNumber)
-  take?: number = defTakeNum;
-
-  @ApiProperty({ description: '검색 조건 필드', required: false })
-  @IsOptional()
-  filterKey?: string;
-
-  @ApiProperty({ description: '검색어', required: false })
-  @IsOptional()
-  filterValue?: string;
-
-  @ApiProperty({
-    description: '검색어 포함 정규식 사용 여부',
-    default: false,
-    required: false,
-  })
-  @IsOptional()
-  @Transform(strToBoolean)
-  useRegSearch?: boolean = false;
-
-  // Back-end 전용. 내부 필요로 활용
-  filter?: Object = null;
-
-  // Back-end 전용. 프로젝션으로 활용
-  projection?: string = null;
-}
 
 export class FindResult<T> {
   @ApiProperty({ description: '검색 결과' })
@@ -148,3 +105,7 @@ export class OptionalInfo {
   @IsString()
   public info3?: string | null;
 }
+function prop() {
+  throw new Error('Function not implemented.');
+}
+

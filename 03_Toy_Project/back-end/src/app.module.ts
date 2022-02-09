@@ -7,7 +7,7 @@ import {
 } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { Toy, ToySchema } from './toys/entities/toy.entity';
+import { Toy, ToySchema } from './models/toy.entity';
 import { ToysService } from './toys/toys.service';
 import { ToysController } from './toys/toys.controller';
 import { LoggerMiddleware } from './middleware/logger.middleware';
