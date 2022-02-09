@@ -1,11 +1,10 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { InjectModel } from '@nestjs/mongoose';
+import { InjectConnection, InjectModel } from '@nestjs/mongoose';
 import { Model, ObjectId } from 'mongoose';
 import { Toy, ToyDocument } from './entities/toy.schema';
 
 @Injectable()
 export class ToysService {
-
     constructor(@InjectModel(Toy.name) private toyModel: Model<ToyDocument>) {}
 
     async create(toy: Toy): Promise<Toy> {

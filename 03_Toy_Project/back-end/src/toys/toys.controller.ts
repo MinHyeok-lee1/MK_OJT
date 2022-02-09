@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, HttpStatus, Param, Patch, Post, Put, Query, Res } from '@nestjs/common';
 import { response } from 'express';
 import { ObjectId } from 'mongoose';
-import { Toy } from './toy.schema';
+import { Toy } from './entities/toy.schema';
 import { ToysService } from './toys.service';
 
 @Controller('toys')
