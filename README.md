@@ -84,7 +84,7 @@
     + .ssh\config에서 User를 dev로 설정해주어서 해결 User는 그냥 단순한 별명이 아닌 계정이름이다. Host는 상관없지만 User는 맞춰줘야함.<br>
   - SSH 연결 시에 서버쪽에서 포트를 연결할 때 필요한 명령어 => 포트 허용(ufw 방화벽 설정)<br>
     + Ubuntu 는 앞에 sudo 입력<br>
-    + ufw 상태 확인 sudo ufw status
+    + <b>ufw 상태 확인 sudo ufw status</b><br>
     + 설치: apt-get -y install ufw<br>
     + 활성화: ufw enable<br>
     + 비활성화: ufw disable<br>
@@ -107,6 +107,9 @@
     + vim실행 후, i(input), port추가 - ex.Port 9022, :(cmd모드), wq(write & quit)
     + sudo service sshd restart<br>
     + exit<br>
+
+프로세스에서 없는 파이프에 쓰려고 했습니다. The process tried to write to a nonexistent pipe. 에러해결방법: 
+C:\Users\내컴퓨터사용자이름 안에 .ssh 폴더에 들어가서 "known_hosts" 파일에서 해당 IP삭제 및 저장 SSH 재접속하면 해결
 
 Repository 원격 연결 확인
   * $ git remote -v
