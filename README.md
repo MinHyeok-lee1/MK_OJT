@@ -108,8 +108,8 @@
     + sudo service sshd restart<br>
     + exit<br>
 
-프로세스에서 없는 파이프에 쓰려고 했습니다. The process tried to write to a nonexistent pipe. 에러해결방법: 
-C:\Users\내컴퓨터사용자이름 안에 .ssh 폴더에 들어가서 "known_hosts" 파일에서 해당 IP삭제 및 저장 SSH 재접속하면 해결
+* 프로세스에서 없는 파이프에 쓰려고 했습니다. The process tried to write to a nonexistent pipe. 에러해결방법
+  + C:\Users\내컴퓨터사용자이름 안에 .ssh 폴더에 들어가서 "known_hosts" 파일에서 해당 IP삭제 및 저장 SSH 재접속하면 해결
 
 Repository 원격 연결 확인
   * $ git remote -v
