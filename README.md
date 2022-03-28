@@ -66,7 +66,7 @@
   * $ git pull origin master
 
 5. 새 repository에 파일을 업로드 하기 위해 스테이지에 파일올림
-  * $ git git add .
+  * $ git add .
 
 6. 최초 커밋
   * $ git commit -m "first commit"
