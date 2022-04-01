@@ -78,6 +78,7 @@
   * $ git push origin +master 
 
 ## 이슈
+* git 에러: modified content, untracked content -> 이유: git으로 push 요청을 보내고 받은 메시지로 github에서 확인해보면 새로 추가한 폴더가 github에 제대로 보여지지 않았다, 해결방법: 제대로 추가되지 않은 폴더의 .git을 제거하고 git rm -rf --cached로 캐쉬삭제 및 git add. 실행 or 폴더 위치가 repository와 연결된 .git 가 있는 폴더가 맞는지 확인하기.
 * GitHub 사용법 & 각 학습폴더 생성 & VS Code, Next.js(React), NestJS 전체적으로 프로젝트를 진행하며 발생한 이슈를 기록
 * 2주차: 개발환경의 이해, SSH & GitHub 진행중 발생 Issue
   - SSH 로컬 작업환경 개발환경 구축중 이슈발생: SSH연결 할 때 .ssh\config 에서 User(계정)를 dev로 하지않아서 Permission이 denied되는 상황이 발생하였다.<br>
