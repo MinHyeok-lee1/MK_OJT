@@ -103,6 +103,11 @@
     + 허용: ufw allow 80/allow<br>
     + 특정IP(port) 허용: sudo ufw allow from 111.111.111.111 to any port 21<br>
     + 특정IP(port) 막음: sudo ufw deny from 111.111.111.111 to any port 21<br>
+
+  - 사용중인 포트 찾아서 KILL 하기
+    + 포트번호 찾는 법: lsof -i :포트번호
+    + KILL 하기: kill -9 PID
+    
   - sshd(SSH Demon)접근(cmd -> ssh 연결) 및 vim에서 sshd 포트등록 및 재시작에 관한 이슈<br>
     + <b>sudo vim /etc/ssh/sshd_config</b> -> vim에서 SSH Port추가(..22번)<br>
     + vim실행 후, i(input), port추가 - ex.Port 9022, :(cmd모드), wq(write & quit)
